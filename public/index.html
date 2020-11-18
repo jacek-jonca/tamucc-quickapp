@@ -195,7 +195,7 @@
                         <p>&nbsp;</p>
                         <div class="row">
                           <div class="input-group biographical">
-                          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                          <div class="col-xs-6 col-sm-6 col-md-2 col-lg-2">
                             <div class="form-group">
                               <label for="dateofBirth">Date of birth</label>
                                 <div class='input-group date' id='dateofBirth'>
@@ -205,49 +205,54 @@
                                 </div>
                             </div>
                           </div>
-                          <div class='col-sm-3'>
-                                  <label for="middle">Place of birth</label>
-                                  <input type="text" class="form-control" id="placeofBirth" name="placeofBirth">
-                          </div>
-                          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                          <div class="col-xs-6 col-sm-6 col-md-2 col-lg-2">
                             <label for="Gender">Gender</label> 
                               <select id="Gender" name="Gender" required="required" class="form-control">
+                                <option value="">--select--</option>
                                 <option value="Female">Female</option>
                                 <option value="Male">Male</option>
                                 <option value="Other">Other</option>
                               </select>
                           </div>
-                          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                            <label for="Citizenship">Citizenship status</label> 
-                              <select id="Citizenship" name="Citizenship" required="required" class="form-control">
-                                <option value="yes">U.S. Citizen</option>
-                                <option value="PR">Permanent Resident</option>
-                                <option value="no">Other</option>
+                          <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                            <label for="Ethnicity">Race & Ethnicity</label> 
+                              <select id="Ethnicity" name="Ethnicity" required="required" class="form-control">
+                                <option value="">--select--</option>
+                                <option value="Native">American Indian or Alaska Native</option>
+                                <option value="Asian">Asian</option>
+                                <option value="Black">Black or African American</option>
+                                <option value="Hispanic">Hispanic or Latino</option>
+                                <option value="Islander">Native Hawaiian or Other Pacific Islander</option>
+                                <option value="White">White</option>
+                                <option value="Other">Other</option>
                               </select>
+                          </div>
+                          <div class="col-xs-6 col-sm-6 col-md-2 col-lg-2">
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control" id="email" name="email">
+                          </div>
+                          <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                            <label for="phone">Phone</label>
+                            <input type="text" class="form-control" id="phone" name="phone">
                           </div>
                         </div>
                       </div>
                       <p>&nbsp;</p>
                         <div class="row">
                             <div class="input-group address">
-                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                <div class="col-xs-9 col-sm-9 col-md-3 col-lg-3">
                                     <label for="street1">Street</label>
                                     <input type="text" class="form-control" id="street1" name="street1">
                                 </div>
-                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2">
                                     <label for="street2">Apt</label>
                                     <input type="text" class="form-control" id="street2" name="street2">
                                 </div>
-                            </div>
-                        </div>
-                        <p>&nbsp;</p>
-                        <div class="row">
-                            <div class="input-group CityStateZip">
-                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
                                     <label for="city">City</label>
                                     <input type="text" class="form-control" id="city" name="city">
                                 </div>
-                                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                                <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2">
                                     <label for="state">State</label>
                                     <select class="form-control" id="state" name="state">
                                         <option value="TX">TX</option>
@@ -305,7 +310,7 @@
                                         <option value="WY">WY</option>
                                     </select>
                                 </div>
-                                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                                <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2">
                                     <label for="zip">ZIP</label>
                                     <input type="text" class="form-control" id="zip" name="zip">
                                 </div>
@@ -313,8 +318,8 @@
                         </div>
                         <p>&nbsp;</p>
                         <div class="row">
-                            <div class="input-group Country">
-                                <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                            <div class="input-group Major">
+                                <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
                                     <label for="country">Country</label>
                                     <select class="form-control" id="country" name="country">
                                         <option value="AF">Afghanistan</option>
@@ -547,7 +552,7 @@
                                         <option value="UA">Ukraine</option>
                                         <option value="AE">United Arab Emirates</option>
                                         <option value="GB">United Kingdom</option>
-                                        <option select value="US">United States</option>
+                                        <option selected value="US">United States</option>
                                         <option value="UM">United States Minor Outlying Islands</option>
                                         <option value="UY">Uruguay</option>
                                         <option value="UZ">Uzbekistan</option>
@@ -563,8 +568,123 @@
                                         <option value="ZW">Zimbabwe</option>
                                     </select>
                                 </div>
-                            </div>
+                                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                                  <label for="Citizenship">Citizenship status</label> 
+                                    <select id="Citizenship" name="Citizenship" required="required" class="form-control">
+                                      <option selected value="yes">U.S. Citizen</option>
+                                      <option value="PR">U.S. Permanent Resident</option>
+                                      <option value="no">Other</option>
+                                    </select>
+                                </div>
+                                <div class='col-xs-6 col-sm-6 col-md-4 col-lg-4'>
+                                  <label for="placeofBirth">Place of birth</label>
+                                  <input type="text" class="form-control" id="placeofBirth" name="placeofBirth">
+                                </div>
+                          </div>
                         </div>
+                        <p>&nbsp;</p>
+                        <div class="row">
+                          <div class="input-group biographical">
+                          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                            <label for="Major">Major</label> 
+                              <select id="Major" name="Major" required="required" class="form-control">
+                                <option value="">Select your Major</option>
+         
+                                <option value="ACCT">ACCOUNTING</option>
+                              
+                                <option value="BUSI">GENERAL BUSINESS</option>
+                              
+                                <option value="ECON">ECONOMICS</option>
+                              
+                                <option value="FINA">FINANCE</option>
+                              
+                                <option value="MGMT">MANAGEMENT</option>
+                              
+                                <option value="MISY">MANAGEMENT INFORMATION SYSTEMS</option>
+                              
+                                <option value="MKTG">MARKETING</option>
+                                <option value="ELEM">ELEMENTARY EDUCATION</option>
+                              
+                                <option value="KINE">KINESIOLOGY</option>
+                              
+                                <option value="ARTS">ART</option>
+                              
+                                <option value="COMS">COMMUNICATION STUDIES</option>
+                              
+                                <option value="CRIJ">CRIMINAL JUSTICE</option>
+                              
+                                <option value="ENGL">ENGLISH</option>
+                              
+                                <option value="GRDS">GRAPHIC DESIGN</option>
+                              
+                                <option value="HIST">HISTORY</option>
+                              
+                                <option value="MEDA">MEDIA ARTS</option>
+                              
+                                <option value="MUSI">MUSIC</option>
+                              
+                                <option value="PHIL">PHILOSOPHY</option>
+                              
+                                <option value="POLS">POLITICAL SCIENCE</option>
+                              
+                                <option value="PSYC">PSYCHOLOGY</option>
+                              
+                                <option value="SOCI">SOCIOLOGY</option>
+                              
+                                <option value="SPAN">SPANISH</option>
+                              
+                                <option value="THEA">THEATRE</option>
+                              
+                                <option value="HCAM">HEALTHCARE ADMINISTRATION</option>
+                              
+                                <option value="NURS">NURSING</option>
+                                <option value="ATSC">ATMOSPHERIC SCIENCES</option>
+                              
+                                <option value="BIMS">BIO-MEDICAL SCIENCES</option>
+                              
+                                <option value="BIOL">BIOLOGY</option>
+                              
+                                <option value="CHEM">CHEMISTRY</option>
+                              
+                                <option value="CLSC">CLINICAL LABORATORY SCIENCE</option>
+                              
+                                <option value="COSC">COMPUTER SCIENCE</option>
+                              
+                                <option value="ESCI">ENVIRONMENTAL SCIENCE</option>
+                              
+                                <option value="GEOL">GEOLOGY</option>
+                              
+                                <option value="GISC">GEOGRAPHIC INFORMATION SCIENCE</option>
+                              
+                                <option value="MATH">MATHEMATICS</option>
+                              
+                                <option value="MCET">MECHANICAL ENGINEERING TECHNOLOGY</option>
+                              
+                                <option value="PHYS">PHYSICS</option>
+                              
+                                <option value="PREL">ELECTRICAL ENGINEERING</option>
+                              
+                                <option value="PREM">MECHANICAL ENGINEERING</option>
+                              
+                                <option value="UNDC">UNDECIDED</option>
+                              </select>
+                          </div>
+                          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                            <label for="Semester">Semester</label> 
+                              <select id="Semester" name="Semester" required="required" class="form-control">
+                                <option value="">Select semester</option>
+        
+                                <option value=" 20212">Spring (Jan - May) 2021 </option>
+                               
+                                <option value=" 20215">Summer I 2021 </option>
+                               
+                                <option value=" 20217">Summer II 2021 </option>
+                               
+                                <option value=" 20219">Fall (Aug - Dec) 2021 </option>
+                              </select>
+                          </div>
+                        </div>
+                      </div>
                         <!-- Start University 1 -->
                         <p>&nbsp;</p>
                         <div class="row">
@@ -915,6 +1035,60 @@
         }
       });
     </script>
+
+<script>
+  $(function () {
+    var bindDatePicker = function() {
+     $(".date").datetimepicker({
+         format:'YYYY-MM-DD',
+       icons: {
+         time: "fa fa-clock-o",
+         date: "fa fa-calendar",
+         up: "fa fa-arrow-up",
+         down: "fa fa-arrow-down"
+       }
+     }).find('input:first').on("blur",function () {
+       // check if the date is correct. We can accept dd-mm-yyyy and yyyy-mm-dd.
+       // update the format if it's yyyy-mm-dd
+       var date = parseDate($(this).val());
+ 
+       if (! isValidDate(date)) {
+         //create date based on momentjs (we have that)
+         date = moment().format('YYYY-MM-DD');
+       }
+ 
+       $(this).val(date);
+     });
+   }
+    
+    var isValidDate = function(value, format) {
+     format = format || false;
+     // lets parse the date to the best of our knowledge
+     if (format) {
+       value = parseDate(value);
+     }
+ 
+     var timestamp = Date.parse(value);
+ 
+     return isNaN(timestamp) == false;
+    }
+    
+    var parseDate = function(value) {
+     var m = value.match(/^(\d{1,2})(\/|-)?(\d{1,2})(\/|-)?(\d{4})$/);
+     if (m)
+       value = m[5] + '-' + ("00" + m[3]).slice(-2) + '-' + ("00" + m[1]).slice(-2);
+ 
+     return value;
+    }
+    
+    bindDatePicker();
+  });
+  </script>
+
+  
+
+
+
         <script>
           function getUrlVars() {
               var vars = {};
