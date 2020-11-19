@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
-
 <head>
     <title>
         Texas A&M University-Corpus Christi
@@ -9,18 +7,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="title" content="Texas A&M University-Corpus Christi QuickApp" />
     <meta name="description" content="Texas A&M University-Corpus Christi Quick Application" />
-    <link rel="icon" type="images/ico" href="https://jonca.org/tamucc/assets/img/favicon.ico" />
+    <link rel="icon" type="images/ico" href="./assets/img/favicon.ico" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://jonca.org/tamucc/assets/js/jquery-json-form-binding.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://jonca.org/tamucc/assets/css/style.css" />
-<!--    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+    <script src="./assets/js/jquery-json-form-binding.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
-    <link href="https://jonca.org/tamucc/assets/fonts/style.css" rel="stylesheet">
-</head>
+    <link href="./assets/fonts/style.css" rel="stylesheet">
 
-<body id="Body">
+    <!-- update the version number as needed -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyDZXbfuL17GbKVJ0Mdlgk9ouFPkVXNDYf0",
+    authDomain: "tamucc-quickapp.firebaseapp.com",
+    databaseURL: "https://tamucc-quickapp.firebaseio.com",
+    projectId: "tamucc-quickapp",
+    storageBucket: "tamucc-quickapp.appspot.com",
+    messagingSenderId: "1090008470366",
+    appId: "1:1090008470366:web:1af562cc2cb9e0b2a175cf",
+    measurementId: "G-XJ2H42HPRM"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/8.0.2/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.0.2/firebase-database.js"></script>
+    <script defer src="/__/firebase/8.0.2/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/8.0.2/firebase-functions.js"></script>
+    <script defer src="/__/firebase/8.0.2/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/8.0.2/firebase-storage.js"></script>
+    <script defer src="/__/firebase/8.0.2/firebase-analytics.js"></script>
+    <script defer src="/__/firebase/8.0.2/firebase-remote-config.js"></script>
+    <script defer src="/__/firebase/8.0.2/firebase-performance.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+    <style media="screen">
+      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
+      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
+      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
+      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
+      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+      @media (max-width: 600px) {
+        body, #message { margin-top: 0; background: white; box-shadow: none; }
+        body { border-top: 16px solid #ffa100; }
+      }
+    </style>
+  </head>
+
+  <body id="Body">
     <div id="bodyDiv">
         <div id="pageBody">
             <header>
@@ -29,7 +84,7 @@
                         <div class="col-md-12">
                             <div class="logo">
                                 <a href="https://www.tamucc.edu">
-                                    <img src="https://jonca.org/tamucc/assets/img/tamucc_logo_svg.svg" alt="Texas A&M University-Corpus Christi" />
+                                    <img src="./assets/img/tamucc_logo_svg.svg" alt="Texas A&M University-Corpus Christi" />
                                 </a>
                             </div>
                             <div class="button-group">
@@ -86,7 +141,7 @@
                 </div>
             </header>
             <div class="home">
-                <div class="hero" style="background-image: url('https://jonca.org/tamucc/assets/img/beach.jpg');">
+                <div class="hero" style="background-image: url('./assets/img/beach.jpg');">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">
@@ -98,9 +153,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="waves one"><img src="https://jonca.org/tamucc/assets/img/wave_1.png"></div>
-                    <div class="waves two"><img src="https://jonca.org/tamucc/assets/img/wave_2.png"></div>
-                    <!--                    <div class="waves three"><img src="https://jonca.org/tamucc/assets/img/wave_3.png"></div> -->
+                    <div class="waves one"><img src="./assets/img/wave_1.png"></div>
+                    <div class="waves two"><img src="./assets/img/wave_2.png"></div>
+                    <!--                    <div class="waves three"><img src="./assets/img/wave_3.png"></div> -->
                 </div>
                 <div class="section_1" id="section_1">
                     <div class="container">
@@ -117,48 +172,88 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="input-group">
+                            <div class="input-group name">
                                 <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
                                     <label for="first">First Name</label>
-                                    <input type="text" class="form-control" id="first" name="first">
+                                    <input type="text" class="form-control" id="first" name="first" placeholder="First name">
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
                                     <label for="middle">Middle Name</label>
-                                    <input type="text" class="form-control" id="middle" name="middle">
+                                    <input type="text" class="form-control" id="middle" name="middle" placeholder="Middle name">
                                 </div>
                                 <div class="col-xs-9 col-sm-9 col-md-5 col-lg-5">
                                     <label for="last">Last Name</label>
-                                    <input type="text" class="form-control" id="last" name="last">
+                                    <input type="text" class="form-control" id="last" name="last" placeholder="Last name">
                                 </div>
                                 <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2">
                                     <label for="suffix">Suffix</label>
-                                    <input type="text" class="form-control" id="suffix" name="suffix">
+                                    <input type="text" class="form-control" id="suffix" name="suffix" placeholder="Suffix">
                                 </div>
                             </div>
                         </div>
                         <p>&nbsp;</p>
                         <div class="row">
-                            <div class="input-group">
-                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                          <div class="input-group biographical">
+                          <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                            <div class="form-group">
+                              <label for="dateofBirth">Date of birth</label>
+                              <input type="date" class="form-control" id="dateofBirth">
+                            </div>
+                          </div>
+                          <div class="col-xs-6 col-sm-6 col-md-2 col-lg-2">
+                            <div class="form-group">
+                            <label for="Gender">Gender</label>
+                              <select id="Gender" name="Gender" required="required" class="form-control">
+                                <option value="">--select--</option>
+                                <option value="Female">Female</option>
+                                <option value="Male">Male</option>
+                                <option value="Other">Other</option>
+                              </select>
+                              </div>
+                          </div>
+                          <div class="col-xs-6 col-sm-6 col-md-2 col-lg-2">
+                            <label for="Ethnicity">Race & Ethnicity</label> 
+                              <select id="Ethnicity" name="Ethnicity" required="required" class="form-control">
+                                <option value="">--select--</option>
+                                <option value="Native">American Indian or Alaska Native</option>
+                                <option value="Asian">Asian</option>
+                                <option value="Black">Black or African American</option>
+                                <option value="Hispanic">Hispanic or Latino</option>
+                                <option value="Islander">Native Hawaiian / Pacific Islander</option>
+                                <option value="White">White</option>
+                                <option value="Other">Other</option>
+                              </select>
+                          </div>
+                          <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                            <div class="form-group">
+                              <label for="email">Email address</label>
+                              <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                            </div>
+                          </div>
+                          <div class="col-xs-6 col-sm-6 col-md-2 col-lg-2">
+                            <label for="phone">Phone</label>
+                            <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter your phone#">
+                          </div>
+                        </div>
+                      </div>
+                      <p>&nbsp;</p>
+                        <div class="row">
+                            <div class="input-group address">
+                                <div class="col-xs-9 col-sm-9 col-md-3 col-lg-3">
                                     <label for="street1">Street</label>
-                                    <input type="text" class="form-control" id="street1" name="street1">
+                                    <input type="text" class="form-control" id="street1" name="street1" placeholder="1234 Somewhere Ln">
                                 </div>
-                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2">
                                     <label for="street2">Apt</label>
-                                    <input type="text" class="form-control" id="street2" name="street2">
-                                </div>
-                            </div>
-                        </div>
-                        <p>&nbsp;</p>
-                        <div class="row">
-                            <div class="input-group">
-                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                    <label for="city">City</label>
-                                    <input type="text" class="form-control" id="city" name="city">
+                                    <input type="text" class="form-control" id="street2" name="street2" placeholder="Apt 3">
                                 </div>
                                 <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                                    <label for="city">City</label>
+                                    <input type="text" class="form-control" id="city" name="city" placeholder="City">
+                                </div>
+                                <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2">
                                     <label for="state">State</label>
-                                    <select class="form-control" id="state" name="state">
+                                    <select class="form-control" id="state" name="state" placeholder="State">
                                         <option value="TX">TX</option>
                                         <option value="NULL">none</option>
                                         <option value="AL">AL</option>
@@ -214,16 +309,16 @@
                                         <option value="WY">WY</option>
                                     </select>
                                 </div>
-                                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                                <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2">
                                     <label for="zip">ZIP</label>
-                                    <input type="text" class="form-control" id="zip" name="zip">
+                                    <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip code">
                                 </div>
                             </div>
                         </div>
                         <p>&nbsp;</p>
                         <div class="row">
-                            <div class="input-group">
-                                <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                            <div class="input-group Country">
+                                <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
                                     <label for="country">Country</label>
                                     <select class="form-control" id="country" name="country">
                                         <option value="AF">Afghanistan</option>
@@ -456,7 +551,7 @@
                                         <option value="UA">Ukraine</option>
                                         <option value="AE">United Arab Emirates</option>
                                         <option value="GB">United Kingdom</option>
-                                        <option select value="US">United States</option>
+                                        <option selected value="US">United States</option>
                                         <option value="UM">United States Minor Outlying Islands</option>
                                         <option value="UY">Uruguay</option>
                                         <option value="UZ">Uzbekistan</option>
@@ -472,12 +567,86 @@
                                         <option value="ZW">Zimbabwe</option>
                                     </select>
                                 </div>
-                            </div>
+                                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                                  <label for="Citizenship">Citizenship status</label> 
+                                    <select id="Citizenship" name="Citizenship" required="required" class="form-control">
+                                      <option selected value="yes">U.S. Citizen</option>
+                                      <option value="PR">U.S. Permanent Resident</option>
+                                      <option value="no">Other</option>
+                                    </select>
+                                </div>
+                                <div class='col-xs-6 col-sm-6 col-md-4 col-lg-4'>
+                                  <label for="placeofBirth">Place of birth</label>
+                                  <input type="text" class="form-control" id="placeofBirth" name="placeofBirth" placeholder="Corpus Christi, TX">
+                                </div>
+                          </div>
                         </div>
+                        <p>&nbsp;</p>
+                        <div class="row">
+                          <div class="input-group Major">
+                          <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+                            <label for="Major">Major</label>
+                              <select id="Major" name="Major" required="required" class="form-control">
+                                <option value="">Select your Major</option>
+                                <option value="ACCT">ACCOUNTING</option>
+                                <option value="ARTS">ART</option>
+                                <option value="ATSC">ATMOSPHERIC SCIENCES</option>
+                                <option value="BIOL">BIOLOGY</option>
+                                <option value="BIMS">BIO-MEDICAL SCIENCES</option>
+                                <option value="CHEM">CHEMISTRY</option>
+                                <option value="CLSC">CLINICAL LABORATORY SCIENCE</option>
+                                <option value="COMS">COMMUNICATION STUDIES</option>
+                                <option value="COSC">COMPUTER SCIENCE</option>
+                                <option value="CRIJ">CRIMINAL JUSTICE</option>
+                                <option value="ECON">ECONOMICS</option>
+                                <option value="PREL">ELECTRICAL ENGINEERING</option>
+                                <option value="ELEM">ELEMENTARY EDUCATION</option>
+                                <option value="ENGL">ENGLISH</option>
+                                <option value="ESCI">ENVIRONMENTAL SCIENCE</option>
+                                <option value="FINA">FINANCE</option>
+                                <option value="BUSI">GENERAL BUSINESS</option>
+                                <option value="GISC">GEOGRAPHIC INFORMATION SCIENCE</option>
+                                <option value="GEOL">GEOLOGY</option>
+                                <option value="GRDS">GRAPHIC DESIGN</option>
+                                <option value="HCAM">HEALTHCARE ADMINISTRATION</option>
+                                <option value="HIST">HISTORY</option>
+                                <option value="KINE">KINESIOLOGY</option>
+                                <option value="MGMT">MANAGEMENT</option>
+                                <option value="MISY">MANAGEMENT INFORMATION SYSTEMS</option>
+                                <option value="MKTG">MARKETING</option>
+                                <option value="MATH">MATHEMATICS</option>
+                                <option value="PREM">MECHANICAL ENGINEERING</option>
+                                <option value="MCET">MECHANICAL ENGINEERING TECHNOLOGY</option>
+                                <option value="MEDA">MEDIA ARTS</option>
+                                <option value="MUSI">MUSIC</option>
+                                <option value="NURS">NURSING</option>
+                                <option value="PHIL">PHILOSOPHY</option>
+                                <option value="PHYS">PHYSICS</option>
+                                <option value="POLS">POLITICAL SCIENCE</option>
+                                <option value="PSYC">PSYCHOLOGY</option>
+                                <option value="SOCI">SOCIOLOGY</option>
+                                <option value="SPAN">SPANISH</option>
+                                <option value="THEA">THEATRE</option>
+                                <option value="UNDC">UNDECIDED</option>
+                      
+                              </select>
+                          </div>
+                          <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+                            <label for="Semester">Semester</label> 
+                            <select id="Semester" name="Semester" required="required" class="form-control">
+                                <option value="">Select semester</option>
+                                <option value=" 20212">Spring (Jan - May) 2021</option>
+                                <option value=" 20215">Summer I 2021</option>
+                                <option value=" 20217">Summer II 2021</option>
+                                <option value=" 20219">Fall (Aug - Dec) 2021</option>
+                              </select>
+                          </div>
+                        </div>
+                      </div>
                         <!-- Start University 1 -->
                         <p>&nbsp;</p>
                         <div class="row">
-                            <div class="input-group">
+                            <div class="input-group uni1">
                                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                                     <label for="uni1">University 1</label>
                                     <input type="text" class="form-control" id="uni1" name="uni1">
@@ -532,7 +701,7 @@
                         <!-- Start University 2 -->
                         <p>&nbsp;</p>
                         <div class="row">
-                            <div class="input-group">
+                            <div class="input-group uni2">
                                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                                     <label for="uni2">University 2</label>
                                     <input type="text" class="form-control" id="uni2" name="uni2">
@@ -587,7 +756,7 @@
                         <!-- Start University 3 -->
                         <p>&nbsp;</p>
                         <div class="row">
-                            <div class="input-group">
+                            <div class="input-group uni3">
                                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                                     <label for="uni3">University 3</label>
                                     <input type="text" class="form-control" id="uni3" name="uni3">
@@ -642,7 +811,7 @@
                         <!-- Start University 4 -->
                         <p>&nbsp;</p>
                         <div class="row">
-                            <div class="input-group">
+                            <div class="input-group uni4">
                                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                                     <label for="uni4">University 4</label>
                                     <input type="text" class="form-control" id="uni4" name="uni4">
@@ -785,107 +954,198 @@
             </footer>
         </div>
     </div>
+
+<!-- Firebase START -->
+
     <script>
-function getUrlVars() {
-    var vars = {};
-    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-        vars[key] = value;
-    });
-    return vars;
-}
+      document.addEventListener('DOMContentLoaded', function() {
+        const loadEl = document.querySelector('#load');
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        // // The Firebase SDK is initialized and available here!
+        //
+        // firebase.auth().onAuthStateChanged(user => { });
+        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+        // firebase.firestore().doc('/foo/bar').get().then(() => { });
+        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
+        // firebase.messaging().requestPermission().then(() => { });
+        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+        // firebase.analytics(); // call to activate
+        // firebase.analytics().logEvent('tutorial_completed');
+        // firebase.performance(); // call to activate
+        //
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
 
-function populate(frm, data) {   
-    $.each(data, function(key, value) {  
-        var ctrl = $('[name='+key+']', frm);  
-        switch(ctrl.prop("type")) { 
-            case "radio": case "checkbox":   
-                ctrl.each(function() {
-                    if($(this).attr('value') == value) $(this).attr("checked",value);
-                });   
-                break;  
-            default:
-                ctrl.val(value); 
-        }  
-    });  
-}
-
-var id = getUrlVars()["id"];
-//var id = "'andy@warhol.com'";
-const baseURL = "https://api.apispreadsheets.com/data/3256/?query=select*from3256whereemail="
-var pathQuery = "select*from3256whereemail="+id
-var pathQuery = decodeURI(pathQuery)
-var URL = baseURL+id
-decodedId = decodeURI(id)
-console.log(decodeURI(pathQuery))
-
-fetch(URL).then(res=>{
-	if (res.status === 200){
-		// SUCCESS
-		res.json().then(data=>{
-			const myData = data['data'][0]
-            console.log(myData)
-            populate('#section_1', myData);
-		}).catch(err => console.log(err))
-	}
-	else{
-		// ERROR
-        console.log('Else error')
-	}
-})
-    document.getElementById('section_1').addEventListener('Submit', check);
-    
-    function check(e){ 
-        e.preventDefault();
-          //and now anything else you want to do.
-          const newData = {
-'email' : decodedId.replace(/['"]+/g, ''),
-'first' : document.getElementById('first').value,
-'middle' : document.getElementById('middle').value,
-'last' : document.getElementById('last').value,
-'suffix' : document.getElementById('suffix').value,
-'street1' : document.getElementById('street1').value,
-'street2' : document.getElementById('street2').value,
-'city' : document.getElementById('city').value,
-'state' : document.getElementById('state').value,
-'zip' : document.getElementById('zip').value,
-'country' : document.getElementById('country').value,
-'uni1' : document.getElementById('uni1').value,
-'fromMonth_uni1' : document.getElementById('fromMonth_uni1').value,
-'fromYear_uni1' : document.getElementById('fromYear_uni1').value,
-'toMonth_uni1' : document.getElementById('toMonth_uni1').value,
-'toYear_uni1' : document.getElementById('toYear_uni1').value,
-'uni2' : document.getElementById('uni2').value,
-'fromMonth_uni2' : document.getElementById('fromMonth_uni2').value,
-'fromYear_uni2' : document.getElementById('fromYear_uni2').value,
-'toMonth_uni2' : document.getElementById('toMonth_uni2').value,
-'toYear_uni2' : document.getElementById('toYear_uni2').value,
-'uni3' : document.getElementById('uni3').value,
-'fromMonth_uni3' : document.getElementById('fromMonth_uni3').value,
-'fromYear_uni3' : document.getElementById('fromYear_uni3').value,
-'toMonth_uni3' : document.getElementById('toMonth_uni3').value,
-'toYear_uni3' : document.getElementById('toYear_uni3').value,
-'uni4' : document.getElementById('uni4').value,
-'fromMonth_uni4' : document.getElementById('fromMonth_uni4').value,
-'fromYear_uni4' : document.getElementById('fromYear_uni4').value,
-'toMonth_uni4' : document.getElementById('toMonth_uni4').value,
-'toYear_uni4' : document.getElementById('toYear_uni4').value
-          };
-
-fetch(URL, {
-	method: "POST",
-	body: JSON.stringify({"data": newData, "query": pathQuery}),
-}).then(res =>{
-	if (res.status === 201){
-        // SUCCESS
-        console.log("write success")
-        console.log(URL)
-	}
-	else{
-        // ERROR
-        console.log("write error")
-	}
-})
-    }
+        try {
+          let app = firebase.app();
+          let features = [
+            'auth', 
+            'database', 
+            'firestore',
+            'functions',
+            'messaging', 
+            'storage', 
+            'analytics', 
+            'remoteConfig',
+            'performance',
+          ].filter(feature => typeof app[feature] === 'function');
+          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+        } catch (e) {
+          console.error(e);
+          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+        }
+      });
     </script>
-</body>
+
+<!-- Firebase END -->
+
+<!-- API Sheets Start -->
+
+        <script>
+          function getUrlVars() {
+              var vars = {};
+              var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+                  vars[key] = value;
+              });
+              return vars;
+          }
+          
+          function populate(frm, data) {   
+              $.each(data, function(key, value) {  
+                  var ctrl = $('[name='+key+']', frm);  
+                  switch(ctrl.prop("type")) { 
+                      case "radio": case "checkbox":   
+                          ctrl.each(function() {
+                              if($(this).attr('value') == value) $(this).attr("checked",value);
+                          });   
+                          break;  
+                      default:
+                          ctrl.val(value); 
+                  }  
+              });  
+          }
+          
+          var id = getUrlVars()["id"];
+          //var id = "'andy@warhol.com'";
+          const baseURL = "https://api.apispreadsheets.com/data/3256/?query=select*from3256whereemail="
+          var pathQuery = "select*from3256whereemail="+id
+          var pathQuery = decodeURI(pathQuery)
+          var URL = baseURL+id
+          decodedId = decodeURI(id)
+          console.log(decodeURI(pathQuery))
+          
+          fetch(URL).then(res=>{
+            if (res.status === 200){
+              // SUCCESS
+              res.json().then(data=>{
+                const myData = data['data'][0]
+                      console.log(myData)
+                      populate('#section_1', myData);
+              }).catch(err => console.log(err))
+            }
+            else{
+              // ERROR
+                  console.log('Else error')
+            }
+          })
+              document.getElementById('section_1').addEventListener('Submit', check);
+              
+              function check(e){ 
+                  e.preventDefault();
+                    //and now anything else you want to do.
+                    const newData = {
+          'email' : decodedId.replace(/['"]+/g, ''),
+          'first' : document.getElementById('first').value,
+          'middle' : document.getElementById('middle').value,
+          'last' : document.getElementById('last').value,
+          'suffix' : document.getElementById('suffix').value,
+          'street1' : document.getElementById('street1').value,
+          'street2' : document.getElementById('street2').value,
+          'city' : document.getElementById('city').value,
+          'state' : document.getElementById('state').value,
+          'zip' : document.getElementById('zip').value,
+          'country' : document.getElementById('country').value,
+          'uni1' : document.getElementById('uni1').value,
+          'fromMonth_uni1' : document.getElementById('fromMonth_uni1').value,
+          'fromYear_uni1' : document.getElementById('fromYear_uni1').value,
+          'toMonth_uni1' : document.getElementById('toMonth_uni1').value,
+          'toYear_uni1' : document.getElementById('toYear_uni1').value,
+          'uni2' : document.getElementById('uni2').value,
+          'fromMonth_uni2' : document.getElementById('fromMonth_uni2').value,
+          'fromYear_uni2' : document.getElementById('fromYear_uni2').value,
+          'toMonth_uni2' : document.getElementById('toMonth_uni2').value,
+          'toYear_uni2' : document.getElementById('toYear_uni2').value,
+          'uni3' : document.getElementById('uni3').value,
+          'fromMonth_uni3' : document.getElementById('fromMonth_uni3').value,
+          'fromYear_uni3' : document.getElementById('fromYear_uni3').value,
+          'toMonth_uni3' : document.getElementById('toMonth_uni3').value,
+          'toYear_uni3' : document.getElementById('toYear_uni3').value,
+          'uni4' : document.getElementById('uni4').value,
+          'fromMonth_uni4' : document.getElementById('fromMonth_uni4').value,
+          'fromYear_uni4' : document.getElementById('fromYear_uni4').value,
+          'toMonth_uni4' : document.getElementById('toMonth_uni4').value,
+          'toYear_uni4' : document.getElementById('toYear_uni4').value
+                    };
+          
+          fetch(URL, {
+            method: "POST",
+            body: JSON.stringify({"data": newData, "query": pathQuery}),
+          }).then(res =>{
+            if (res.status === 201){
+                  // SUCCESS
+                  console.log("write success")
+                  console.log(URL)
+            }
+            else{
+                  // ERROR
+                  console.log("write error")
+            }
+          })
+              }
+              </script>
+
+<!-- API Sheets END -->
+
+<!-- ADD ROW START -->
+<script type="text/javascript">
+  var uniRow = 1;
+  // add row
+  $("#addRow").click(function () {
+      var html = '';
+      html += '<p>&nbsp;</p>';
+      html += '<div class="row">';
+      html += `   <div class="input-group Uni$uniRow">`;
+      html += '      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">';
+      html += `         <label for="Uni$uniRow">Name of the Highschool / College / University $uniRow</label>`;
+      html += `         <input type="text" class="form-control" id="Uni$uniRow" name="Uni$uniRow">`;
+      html += '      </div>';
+      html += '      <div class="col-xs-9 col-sm-9 col-md-2 col-lg-2">';
+      html += '         <div class="form-group">';
+      html += `            <label for="fromUni$uniRow">Attended from</label>`;
+      html += `            <input type="date" class="form-control" id="fromUni$uniRow">`;
+      html += '         </div>';
+      html += '      </div>';
+      html += '      <div class="col-xs-9 col-sm-9 col-md-2 col-lg-2">';
+      html += '         <div class="form-group">';
+      html += `            <label for="toUni$uniRow">Attended to</label>`;
+      html += `            <input type="date" class="form-control" id="toUni$uniRow">`;
+      html += '         </div>';
+      html += '      </div>';
+      html += '   </div>';
+      html += '</div>';
+
+      $('#newRow').append(html);
+      var UniRow = UniRow + 1;
+  });
+
+  // remove row
+  $(document).on('click', '#removeRow', function () {
+      $(this).closest('#inputFormRow').remove();
+      var UniRow = UniRow - 1;
+  });
+</script>
+<!-- ADD ROW END -->
+
+
+
+  </body>
 </html>
