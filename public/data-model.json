@@ -1,0 +1,32 @@
+{
+    "users": [
+        {
+            "id": "t35TsUBj3ct",
+            "email" : "selena@sol.com",
+            "first" : "Selena",
+            "middle" : "Perez",
+            "last" : "Quintanilla",
+            "suffix" : "none",
+            "birthDate" : "01011964",
+            "gender" : "female",
+            "race" : "hispanic",
+            "phone" : "3618258805",
+            "street1" : "2000 Airport",
+            "street2" : "Site #2",
+            "city" : "Corpus Christi",
+            "state" : "TX",
+            "zip" : "78418",
+            "country" : "US",
+            "citizenship:" : "yes",
+            "birthPlace" : "Lake Jackson, TX",
+            "major" : "ACCT",
+            "semester" : "202101",
+            "nameUni1" : "Corpus Christi State University",
+            "fromUni1" : "101090",
+            "toUni1" : "102093",
+            "nameUni2" : "Del Mar College",
+            "fromUni2" : "101085",
+            "toUni2" : "102087"
+        }
+    ]
+}
