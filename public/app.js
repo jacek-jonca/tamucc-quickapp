@@ -1,7 +1,7 @@
-'use strict';
+// 'use strict';
 
 //grab a form, the . (dot) indicates a css/html class
-const form = document.querySelector('.section_1');
+//const form = document.querySelector('.section_1');
 
 (function() {
     var firebaseConfig = {
@@ -22,7 +22,7 @@ const form = document.querySelector('.section_1');
       alert("Thank you for applying to Texas A&M University-Corpus Christi. We'll be in touch soon!")
       var db = firebase.firestore();
 
-      db.collection("messages").add({
+      db.collection("data").add({
           id: data["id"],
           email: data["email"],
           first: data["first"],
@@ -43,9 +43,26 @@ const form = document.querySelector('.section_1');
           birthPlace: data["birthPlace"],
           major: data["major"],
           semester: data["semester"],
-          nameUni1: data["nameUni1"],
-          fromUni1: data["fromUni1"],
-          toUni1: data["toUni1"]
+          eduHistory: {
+            nameUni1: data.eduHistory["nameUni1"],
+            fromUni1: data.eduHistory["fromUni1"],
+            toUni1: data.eduHistory["toUni1"],
+            nameUni2: data.eduHistory["nameUni2"],
+            fromUni2: data.eduHistory["fromUni2"],
+            toUni2: data.eduHistory["toUni2"],
+            nameUni3: data.eduHistory["nameUni3"],
+            fromUni3: data.eduHistory["fromUni3"],
+            toUni3: data.eduHistory["toUni3"],
+            nameUni4: data.eduHistory["nameUni4"],
+            fromUni4: data.eduHistory["fromUni4"],
+            toUni4: data.eduHistory["toUni4"],
+            nameUni5: data.eduHistory["nameUni5"],
+            fromUni5: data.eduHistory["fromUni5"],
+            toUni5: data.eduHistory["toUni5"],
+            nameUni6: data.eduHistory["nameUni6"],
+            fromUni6: data.eduHistory["fromUni6"],
+            toUni6: data.eduHistory["toUni6"]
+          }
       })
       .then(function(docRef) {
           console.log("Application submitted, ID: ", docRef.id);
@@ -56,7 +73,9 @@ const form = document.querySelector('.section_1');
       });
     }
 
-    var application_submit = function(){
+function check(e){ 
+        e.preventDefault();
+          //and now anything else you want to do.
       //Gets Value of form HTML elements
       var id = getUrlVars()["id"];
       var id = decodeURI(id);
@@ -82,6 +101,21 @@ const form = document.querySelector('.section_1');
       var nameUni1 = document.getElementById('nameUni1').value;
       var fromUni1 = document.getElementById('fromUni1').value;
       var toUni1 = document.getElementById('toUni1').value;
+      var nameUni2 = document.getElementById('nameUni2').value;
+      var fromUni2 = document.getElementById('fromUni2').value;
+      var toUni2 = document.getElementById('toUni2').value;
+      var nameUni3 = document.getElementById('nameUni3').value;
+      var fromUni3 = document.getElementById('fromUni3').value;
+      var toUni3 = document.getElementById('toUni3').value;
+      var nameUni4 = document.getElementById('nameUni4').value;
+      var fromUni4 = document.getElementById('fromUni4').value;
+      var toUni4 = document.getElementById('toUni4').value;
+      var nameUni5 = document.getElementById('nameUni5').value;
+      var fromUni5 = document.getElementById('fromUni5').value;
+      var toUni5 = document.getElementById('toUni5').value;
+      var nameUni6 = document.getElementById('nameUni6').value;
+      var fromUni6 = document.getElementById('fromUni6').value;
+      var toUni6 = document.getElementById('toUni6').value;
 
   //Stores those values in a object
       var data = {
@@ -105,18 +139,29 @@ const form = document.querySelector('.section_1');
           "birthPlace": birthPlace,
           "major": major,
           "semester": semester,
-          "nameUni1": nameUni1,
-          "fromUni1": fromUni1,
-          "toUni1": toUni1
+          "eduHistory": {
+            "nameUni1": nameUni1,
+            "fromUni1": fromUni1,
+            "toUni1": toUni1,
+            "nameUni2": nameUni2,
+            "fromUni2": fromUni2,
+            "toUni2": toUni2,
+            "nameUni3": nameUni3,
+            "fromUni3": fromUni3,
+            "toUni3": toUni3,
+            "nameUni4": nameUni4,
+            "fromUni4": fromUni4,
+            "toUni4": toUni4,
+            "nameUni5": nameUni5,
+            "fromUni5": fromUni5,
+            "toUni5": toUni5,
+            "nameUni6": nameUni6,
+            "fromUni6": fromUni6,
+            "toUni6": toUni6
+          }
       }
       push_to_firebase(data);
-
     }
-    
-    window.onload=function(){
-        document.getElementById('section_1').addEventListener("click", application_submit);
-          }
-
   })();
 
   //---------------------------------------
