@@ -41,8 +41,6 @@
     
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 -->
-    <script type="text/javascript" src="app.js"></script>
-
 
     <style media="screen">
       body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
@@ -163,6 +161,7 @@
                         <div class="row">
                             <div class="input-group name">
                                 <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+                                    <input type="hidden" class="edit-userid">
                                     <label for="first">First Name</label>
                                     <input type="text" class="form-control input-lg" id="first" name="first" placeholder="First name">
                                 </div>
@@ -747,7 +746,8 @@
                         <!-- <p>&nbsp;</p> -->
                         <!-- Submit button -->
                         <div class="col-md-12">
-                            <button type="button" class="btn btn-danger btn-lg" onclick="check(event)" id="Submit" name="Submit">Submit</button>                        </div>
+                            <button type="button" class="btn btn-danger btn-lg" id="submitAppBtn" name="Submit">Submit</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -835,50 +835,6 @@
         </div>
     </div>
 
-<!-- Firebase START -->
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-
-<!-- Firebase END -->
-
-
 <!-- DIFFERENT ADD COLLEGES START -->
 <!-- Adapted from https://jsfiddle.net/8xcs1xcc/ and https://stackoverflow.com/questions/25888954/dynamic-form-field-creation-with-increment -->
 
@@ -899,9 +855,11 @@ function attach_delete(){
 }
 </script>
 
-<!-- ADD ROW END -->
+<script type="text/javascript" src="app.js"></script>
 
-<!-- ADD ROW STYLE -->
+<!-- ADD COLLEGES END -->
+
+<!-- ADD ROW COLLEGES STYLE -->
 <style>
 .add-one{
     text-align:center;

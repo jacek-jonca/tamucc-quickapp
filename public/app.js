@@ -3,199 +3,149 @@
 //grab a form, the . (dot) indicates a css/html class
 const form = document.querySelector('.section_1');
 
-//grab an input,  the # (hash/pound) indicates an html id
-//const inputEmail = form.querySelector('#inputEmail');
-
-//config your firebase push
-var config = {
-    apiKey: "AIzaSyDZXbfuL17GbKVJ0Mdlgk9ouFPkVXNDYf0",
-    authDomain: "tamucc-quickapp.firebaseapp.com",
-    databaseURL: "https://tamucc-quickapp.firebaseio.com",
-    projectId: "tamucc-quickapp",
-    storageBucket: "tamucc-quickapp.appspot.com",
-    messagingSenderId: "1090008470366",
-    appId: "1:1090008470366:web:1af562cc2cb9e0b2a175cf",
-    measurementId: "G-XJ2H42HPRM"
+(function() {
+    var firebaseConfig = {
+      apiKey: "AIzaSyDZXbfuL17GbKVJ0Mdlgk9ouFPkVXNDYf0",
+      authDomain: "tamucc-quickapp.firebaseapp.com",
+      databaseURL: "https://tamucc-quickapp.firebaseio.com",
+      projectId: "tamucc-quickapp",
+      storageBucket: "tamucc-quickapp.appspot.com",
+      messagingSenderId: "1090008470366",
+      appId: "1:1090008470366:web:1af562cc2cb9e0b2a175cf",
+      measurementId: "G-XJ2H42HPRM"
   };
 
-  firebase.initializeApp(config);
-  firebase.analytics();
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
 
-  // Firebase Database Reference and the child
-  const dbRef = firebase.database().ref();
-  const usersRef = dbRef.child('users');
-  
-  
-      readUserData(); 
-      
-  
-  // --------------------------
-  // READ
-  // --------------------------
-  function readUserData() {
-  
-      const userListUI = document.getElementById("user-list");
-  
-      usersRef.on("value", snap => {
-  
-          userListUI.innerHTML = ""
-  
-          snap.forEach(childSnap => {
-  
-              let key = childSnap.key,
-                  value = childSnap.val()
-                
-              let $li = document.createElement("li");
-  
-              // edit icon
-              let editIconUI = document.createElement("span");
-              editIconUI.class = "edit-user";
-              editIconUI.innerHTML = " ✎";
-              editIconUI.setAttribute("userid", key);
-              editIconUI.addEventListener("click", editButtonClicked)
-  
-              // delete icon
-              let deleteIconUI = document.createElement("span");
-              deleteIconUI.class = "delete-user";
-              deleteIconUI.innerHTML = " ☓";
-              deleteIconUI.setAttribute("userid", key);
-              deleteIconUI.addEventListener("click", deleteButtonClicked)
-              
-              $li.innerHTML = value.name;
-              $li.append(editIconUI);
-              $li.append(deleteIconUI);
-  
-              $li.setAttribute("user-key", key);
-              $li.addEventListener("click", userClicked)
-              userListUI.append($li);
-  
-           });
-  
-  
+    var push_to_firebase = function(data){
+      alert("Thank you for applying to Texas A&M University-Corpus Christi. We'll be in touch soon!")
+      var db = firebase.firestore();
+
+      db.collection("messages").add({
+          id: data["id"],
+          email: data["email"],
+          first: data["first"],
+          middle: data["middle"],
+          last: data["last"],
+          suffix: data["suffix"],
+          birthDate: data["birthDate"],
+          gender: data["gender"],
+          race: data["race"],
+          phone: data["phone"],
+          street1: data["street1"],
+          street2: data["street2"],
+          city: data["city"],
+          state: data["state"],
+          zip: data["zip"],
+          country: data["country"],
+          citizenship: data["citizenship"],
+          birthPlace: data["birthPlace"],
+          major: data["major"],
+          semester: data["semester"],
+          nameUni1: data["nameUni1"],
+          fromUni1: data["fromUni1"],
+          toUni1: data["toUni1"]
       })
-  
-  }
-  
-  
-  
-  function userClicked(e) {
-  
-  
-          var userID = e.target.getAttribute("user-key");
-  
-          const userRef = dbRef.child('users/' + userID);
-          const userDetailUI = document.getElementById("user-detail");
-  
-          userRef.on("value", snap => {
-  
-              userDetailUI.innerHTML = ""
-  
-              snap.forEach(childSnap => {
-                  var $p = document.createElement("p");
-                  $p.innerHTML = childSnap.key  + " - " +  childSnap.val();
-                  userDetailUI.append($p);
-              })
-  
-          });
-      
-  
-  }
-  
-  
-  
-  
-  
-  // --------------------------
-  // ADD
-  // --------------------------
-  
-  const addUserBtnUI = document.getElementById("add-user-btn");
-  addUserBtnUI.addEventListener("click", addUserBtnClicked)
-  
-  
-  
-  function addUserBtnClicked() {
-  
-      const usersRef = dbRef.child('users');
-  
-      const addUserInputsUI = document.getElementsByClassName("user-input");
-  
-       // this object will hold the new user information
-      let newUser = {};
-  
-      // loop through View to get the data for the model 
-      for (let i = 0, len = addUserInputsUI.length; i < len; i++) {
-  
-          let key = addUserInputsUI[i].getAttribute('data-key');
-          let value = addUserInputsUI[i].value;
-          newUser[key] = value;
-      }
-  
-      usersRef.push(newUser)
-  
-      
-     console.log(myPro)
-     
+      .then(function(docRef) {
+          console.log("Application submitted, ID: ", docRef.id);
+          location.reload();
+      })
+      .catch(function(error) {
+          console.error("Application could not be submitted: ", error);
+      });
+    }
 
-  
-  }
-  
-  
-  // --------------------------
-  // EDIT
-  // --------------------------
-  function editButtonClicked(e) {
-      
-      document.getElementById('edit-user-module').style.display = "block";
-  
-      //set user id to the hidden input field
-      document.querySelector(".edit-userid").value = e.target.getAttribute("userid");
-  
-      const userRef = dbRef.child('users/' + e.target.getAttribute("userid"));
-  
-      // set data to the user field
-      const editUserInputsUI = document.querySelectorAll(".edit-user-input");
-  
-  
-      userRef.on("value", snap => {
-  
-          for(var i = 0, len = editUserInputsUI.length; i < len; i++) {
-  
-              var key = editUserInputsUI[i].getAttribute("data-key");
-                      editUserInputsUI[i].value = snap.val()[key];
+    var application_submit = function(){
+      //Gets Value of form HTML elements
+      var id = getUrlVars()["id"];
+      var id = decodeURI(id);
+      var email = document.getElementById('email').value;
+      var first = document.getElementById('first').value;
+      var middle = document.getElementById('middle').value;
+      var last = document.getElementById('last').value;
+      var suffix = document.getElementById('suffix').value;
+      var birthDate = document.getElementById('birthDate').value;
+      var gender = document.getElementById('gender').value;
+      var race = document.getElementById('race').value;
+      var phone = document.getElementById('phone').value;
+      var street1 = document.getElementById('street1').value;
+      var street2 = document.getElementById('street2').value;
+      var city = document.getElementById('city').value;
+      var state = document.getElementById('state').value;
+      var zip = document.getElementById('zip').value;
+      var country = document.getElementById('country').value;
+      var citizenship = document.getElementById('citizenship').value;
+      var birthPlace = document.getElementById('birthPlace').value;
+      var major = document.getElementById('major').value;
+      var semester = document.getElementById('semester').value;
+      var nameUni1 = document.getElementById('nameUni1').value;
+      var fromUni1 = document.getElementById('fromUni1').value;
+      var toUni1 = document.getElementById('toUni1').value;
+
+  //Stores those values in a object
+      var data = {
+          "id": id,
+          "email": email,
+          "first": first,
+          "middle": middle,
+          "last": last,
+          "suffix": suffix,
+          "birthDate": birthDate,
+          "gender": gender,
+          "race": race,
+          "phone": phone,
+          "street1": street1,
+          "street2": street2,
+          "city": city,
+          "state": state,
+          "zip": zip,
+          "country": country,
+          "citizenship": citizenship,
+          "birthPlace": birthPlace,
+          "major": major,
+          "semester": semester,
+          "nameUni1": nameUni1,
+          "fromUni1": fromUni1,
+          "toUni1": toUni1
+      }
+      push_to_firebase(data);
+
+    }
+    
+    window.onload=function(){
+        document.getElementById('section_1').addEventListener("click", application_submit);
           }
-  
-      });
-  
-  
-  
-  
-      const saveBtn = document.querySelector("#edit-user-btn");
-      saveBtn.addEventListener("click", saveUserBtnClicked)
-  }
-  
-  
-  function saveUserBtnClicked(e) {
-   
-      const userID = document.querySelector(".edit-userid").value;
-      const userRef = dbRef.child('users/' + userID);
-  
-      var editedUserObject = {}
-  
-      const editUserInputsUI = document.querySelectorAll(".edit-user-input");
-  
-      editUserInputsUI.forEach(function(textField) {
-          let key = textField.getAttribute("data-key");
-          let value = textField.value;
-            editedUserObject[textField.getAttribute("data-key")] = textField.value
-      });
-  
-  
-  
-      userRef.update(editedUserObject);
-  
-      document.getElementById('edit-user-module').style.display = "none";
-  
-  
-  }
-  
+
+  })();
+
+  //---------------------------------------
+  // GET ID VALUE FROM URL
+  //---------------------------------------
+
+  function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+
+//-----------------------------------------
+// POPULATE FORM DATA
+//-----------------------------------------
+
+function populate(frm, data) {   
+    $.each(data, function(key, value) {  
+        var ctrl = $('[name='+key+']', frm);  
+        switch(ctrl.prop("type")) { 
+            case "radio": case "checkbox":   
+                ctrl.each(function() {
+                    if($(this).attr('value') == value) $(this).attr("checked",value);
+                });   
+                break;  
+            default:
+                ctrl.val(value); 
+        }  
+    });  
+}
