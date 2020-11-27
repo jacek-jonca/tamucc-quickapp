@@ -11,13 +11,14 @@
     <link rel="icon" type="images/ico" href="./assets/img/favicon.ico" />
 
 <!-- all CSS -->
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link defer rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha512-jCaU0Dp3IbMDlZ6f6dSEQSnOrSsugG6F6YigRWnagi7HoOLshF1kwxLT4+xCZRgQsTNqpUKj6WmWOxsu9l3URA==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css" integrity="sha512-+C1cmvw5D0Pfm6Gt9em3zp3OyebHM4wo05D38a0kXm7C1MRZZ9oPTbSX3KoRxAA0b2oHCqrcJEPikiXjsNXgtw==" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
+    <link href="assets/fonts/style.css" rel="stylesheet">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 
     <!-- update the version number as needed -->
     <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -59,6 +60,38 @@
   </head>
 
   <body id="Body">
+
+<!-- START FORM VALIDATION -->
+
+      <script>
+          (function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // fetch all the forms we want to apply custom style
+    var inputs = document.getElementsByClassName('form-control')
+
+    // loop over each input and watch blur event
+    var validation = Array.prototype.filter.call(inputs, function(input) {
+
+      input.addEventListener('blur', function(event) {
+        // reset
+        input.classList.remove('is-invalid')
+        input.classList.remove('is-valid')
+
+        if (input.checkValidity() === false) {
+            input.classList.add('is-invalid')
+        }
+        else {
+            input.classList.add('is-valid')
+        }
+      }, false);
+    });
+  }, false);
+})()
+      </script>
+
+<!-- END FORM VALIDATION -->
+
     <div id="bodyDiv">
         <div id="pageBody">
             <header>
@@ -141,7 +174,7 @@
                     <!--                    <div class="waves three"><img src="./assets/img/wave_3.png"></div> -->
                 </div>
                 <div class="section_1" id="section_1">
-                    <div class="container">
+                    <form class="container" novalidate="" action="/echo" method="POST" id="myForm">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="content_box arrow">
@@ -149,7 +182,7 @@
                                 </div>
                                 <div class="content_box">
                                     <h2>We’ve made this application simple and easy. We even pre-filled it for you!</h2>
-                                    <p>It just need a few finishing touches from you and of course that credit card of yours. Everything should not take more than 5 minutes. Let's begin, shall we?</p>
+                                    <p>It just need a few finishing touches from you and of course that credit card of yours. Everything should not take more than 10 minutes. Let's begin, shall we?</p>
                                     <!-- <p>&nbsp;</p> -->
                                 </div>
                             </div>
@@ -162,19 +195,21 @@
                             <div class="input-group name">
                                 <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
                                     <input type="hidden" class="edit-userid">
-                                    <label for="first">First Name</label>
-                                    <input type="text" class="form-control input-lg" id="first" name="first" placeholder="First name">
+                                    <label class="form-control-label" for="first">First Name</label>
+                                    <input type="text" class="form-control input-lg" id="first" name="first" placeholder="First name" required>
+                                    <div class="valid-feedback">Got it.</div>
+                                    <div class="invalid-feedback">if you don't have a first name enter N/A</div>
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                                    <label for="middle">Middle Name</label>
+                                    <label class="form-control-label" for="middle">Middle Name</label>
                                     <input type="text" class="form-control input-lg" id="middle" name="middle" placeholder="Middle name">
                                 </div>
                                 <div class="col-xs-9 col-sm-9 col-md-5 col-lg-5">
-                                    <label for="last">Last Name</label>
-                                    <input type="text" class="form-control input-lg" id="last" name="last" placeholder="Last name">
+                                    <label class="form-control-label" for="last">Last Name</label>
+                                    <input type="text" class="form-control input-lg" id="last" name="last" placeholder="Last name" required>
                                 </div>
                                 <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2">
-                                    <label for="suffix">Suffix</label>
+                                    <label class="form-control-label" for="suffix">Suffix</label>
                                     <input type="text" class="form-control input-lg" id="suffix" name="suffix" placeholder="Suffix">
                                 </div>
                             </div>
@@ -190,14 +225,14 @@
                           <div class="input-group biographical">
                           <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
                             <div class="form-group">
-                              <label for="dateofBirth">Date of birth</label>
-                              <input type="date" class="form-control input-lg" id="dateofBirth">
+                              <label class="form-control-label" for="birthDate">Date of birth</label>
+                              <input type="date" class="form-control input-lg" id="birthDate" name="birthDate" required>
                             </div>
                           </div>
                           <div class="col-xs-6 col-sm-6 col-md-2 col-lg-2">
                             <div class="form-group">
-                            <label for="Gender">Gender</label>
-                              <select id="Gender" name="Gender" required="required" class="form-control input-lg">
+                            <label class="form-control-label" for="gender">Gender</label>
+                              <select id="gender" name="gender" class="form-control input-lg" required>
                                 <option value="">--select--</option>
                                 <option value="Female">Female</option>
                                 <option value="Male">Male</option>
@@ -206,8 +241,8 @@
                               </div>
                           </div>
                           <div class="col-xs-6 col-sm-6 col-md-2 col-lg-2">
-                            <label for="Ethnicity">Race & Ethnicity</label> 
-                              <select id="Ethnicity" name="Ethnicity" required="required" class="form-control input-lg">
+                            <label class="form-control-label" for="race">Race & Ethnicity</label> 
+                              <select id="race" name="race" class="form-control input-lg" required>
                                 <option value="">--select--</option>
                                 <option value="Native">American Indian or Alaska Native</option>
                                 <option value="Asian">Asian</option>
@@ -220,13 +255,13 @@
                           </div>
                           <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
                             <div class="form-group">
-                              <label for="email">Email address</label>
-                              <input type="email" class="form-control input-lg" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                              <label class="form-control-label" for="email">Email address</label>
+                              <input type="email" class="form-control input-lg" id="email" data-minlength="6" placeholder="Enter email" required>
                             </div>
                           </div>
                           <div class="col-xs-6 col-sm-6 col-md-2 col-lg-2">
-                            <label for="phone">Phone</label>
-                            <input type="phone" class="form-control input-lg" id="phone" name="phone" placeholder="Enter your phone#">
+                            <label class="form-control-label" for="phone">Phone</label>
+                            <input type="phone" class="form-control input-lg" data-minlength="10" id="phone" name="phone" placeholder="Enter your phone#" required>
                           </div>
                         </div>
                       </div>
@@ -240,20 +275,20 @@
                         <div class="row">
                             <div class="input-group address">
                                 <div class="col-xs-9 col-sm-9 col-md-3 col-lg-3">
-                                    <label for="street1">Street</label>
-                                    <input type="text" class="form-control input-lg" id="street1" name="street1" placeholder="1234 Somewhere Ln">
+                                    <label class="form-control-label" for="street1">Street</label>
+                                    <input type="text" class="form-control input-lg" id="street1" name="street1" placeholder="1234 Somewhere Ln" required>
                                 </div>
                                 <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2">
-                                    <label for="street2">Apt</label>
+                                    <label class="form-control-label" for="street2">Apt</label>
                                     <input type="text" class="form-control input-lg" id="street2" name="street2" placeholder="Apt 3">
                                 </div>
                                 <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-                                    <label for="city">City</label>
-                                    <input type="text" class="form-control input-lg" id="city" name="city" placeholder="City">
+                                    <label class="form-control-label" for="city">City</label>
+                                    <input type="text" class="form-control input-lg" id="city" name="city" placeholder="City" required>
                                 </div>
                                 <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2">
-                                    <label for="state">State</label>
-                                    <select class="form-control input-lg" id="state" name="state" placeholder="State">
+                                    <label class="form-control-label" for="state">State</label>
+                                    <select class="form-control input-lg" id="state" name="state" placeholder="State" required>
                                         <option value="TX">TX</option>
                                         <option value="NULL">none</option>
                                         <option value="AL">AL</option>
@@ -310,8 +345,8 @@
                                     </select>
                                 </div>
                                 <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2">
-                                    <label for="zip">ZIP</label>
-                                    <input type="text" class="form-control input-lg" id="zip" name="zip" placeholder="Zip code">
+                                    <label class="form-control-label" for="zip">ZIP</label>
+                                    <input type="text" class="form-control input-lg" id="zip" name="zip" placeholder="Zip code" required>
                                 </div>
                             </div>
                         </div>
@@ -325,8 +360,8 @@
                         <div class="row">
                             <div class="input-group Country">
                                 <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
-                                    <label for="country">Country</label>
-                                    <select class="form-control input-lg" id="country" name="country">
+                                    <label class="form-control-label" for="country">Country</label>
+                                    <select class="form-control input-lg" id="country" name="country" required>
                                         <option value="AF">Afghanistan</option>
                                         <option value="AX">Åland Islands</option>
                                         <option value="AL">Albania</option>
@@ -574,16 +609,16 @@
                                     </select>
                                 </div>
                                 <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-                                  <label for="Citizenship">Citizenship status</label> 
-                                    <select id="Citizenship" name="Citizenship" required="required" class="form-control input-lg">
+                                  <label class="form-control-label" for="citizenship">Citizenship status</label> 
+                                    <select id="citizenship" name="citizenship" class="form-control input-lg" required>
                                       <option selected value="yes">U.S. Citizen</option>
                                       <option value="PR">U.S. Permanent Resident</option>
                                       <option value="no">Other</option>
                                     </select>
                                 </div>
                                 <div class='col-xs-6 col-sm-6 col-md-4 col-lg-4'>
-                                  <label for="placeofBirth">Place of birth</label>
-                                  <input type="text" class="form-control input-lg" id="placeofBirth" name="placeofBirth" placeholder="Corpus Christi, TX">
+                                  <label class="form-control-label" for="birthPlace">Place of birth</label>
+                                  <input type="text" class="form-control input-lg" id="birthPlace" name="birthPlace" placeholder="Corpus Christi, TX" required>
                                 </div>
                           </div>
                         </div>
@@ -598,8 +633,8 @@
                           <div class="form-group Major">
                           <div class="col-md-3"></div>
                           <div class="col-md-4">
-                            <label for="Major">Major</label>
-                              <select id="Major" name="Major" required="required" class="form-control input-lg">
+                            <label class="form-control-label" for="major">Major</label>
+                              <select id="major" name="major" class="form-control input-lg" required>
                                 <option value="">Select your Major</option>
                                 <option value="ACCT">ACCOUNTING</option>
                                 <option value="ARTS">ART</option>
@@ -644,8 +679,8 @@
                               </select>
                           </div>
                           <div class="col-md-3">
-                            <label for="Semester">Semester</label> 
-                            <select id="Semester" name="Semester" required="required" class="form-control input-lg">
+                            <label class="form-control-label" for="semester">Semester</label> 
+                            <select id="semester" name="semester" class="form-control input-lg" required>
                                 <option value="">Select semester</option>
                                 <option value=" 20212">Spring (Jan - May) 2021</option>
                                 <option value=" 20215">Summer I 2021</option>
@@ -659,38 +694,6 @@
                         <!-- <p>&nbsp;</p> -->
                     </fieldset>
                         <!-- Start ALL UNIS -->
-
-                        <!-- HIDDEN DYNAMIC ELEMENT TO CLONE -->
-                        <!-- you can replace it with any other elements -->
-                        <div class="form-group dynamic-element" style="display:none">
-                            <div class="row">
-                            <div class="col-md-1"></div>
-                            
-                            <!-- Replace these fields -->
-                            <div class="col-md-4">
-                                <label for="uniNames[]">Highschool / College / University</label>
-                                <input type="text" class="form-control input-lg" id="uniNames[]" name="uniNames[]">
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label for="uniFrom[]">attended from</label>
-                                    <input type="date" class="form-control input-lg" id="uniFrom[] name="uniFrom[]">
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label for="uniTo[]">until</label>
-                                    <input type="date" class="form-control input-lg" id="uniTo[] name="uniTo[]">
-                                </div>
-                            </div>
-                            <!-- End of fields-->
-                            <div class="col-md-1">
-                                <label for="">&nbsp;</label>
-                                <p class="delete">x</p>
-                            </div>
-                            </div>
-                        </div>
-                        <!-- END OF HIDDEN ELEMENT -->
 
 <!-- EDUCATIONAL HISTORY FiELD GROUP HEADER -->
   <fieldset>
@@ -706,19 +709,19 @@
     
     <!-- Replace these fields -->
     <div class="col-md-4">
-        <label for="uniName1">Highschool / College / University</label>
-        <input type="text" class="form-control input-lg" id="uniName1" name="uniName1">
+        <label class="form-control-label" for="nameUni1">Highschool / College / University</label>
+        <input type="text" class="form-control input-lg" id="nameUni1" name="nameUni1" required>
     </div>
     <div class="col-md-3">
         <div class="form-group">
-            <label for="uniFrom[]">attended from</label>
-            <input type="date" class="form-control input-lg" id="uniFrom1" name="uniFrom1">
+            <label class="form-control-label" for="fromUni1">attended from</label>
+            <input type="date" class="form-control input-lg" id="fromUni1" name="fromUni1" required>
         </div>
     </div>
     <div class="col-md-3">
         <div class="form-group">
-            <label for="uniTo1">until</label>
-            <input type="date" class="form-control input-lg" id="uniTo1" name="uniTo1">
+            <label class="form-control-label" for="toUni1">until</label>
+            <input type="date" class="form-control input-lg" id="toUni1" name="toUni1" required>
         </div>
     </div>
     <!-- End of fields-->
@@ -741,7 +744,6 @@
       </div>
   </div>
 </fieldset>
-                    </div>
                     <div class="row">
                         <!-- <p>&nbsp;</p> -->
                         <!-- Submit button -->
@@ -749,6 +751,7 @@
                             <button type="button" class="btn btn-danger btn-lg" id="Submit" name="Submit" onclick="check(event)">Submit</button>
                         </div>
                     </div>
+                </form>
                 </div>
             </div>
             <footer>
@@ -840,8 +843,8 @@
 
 <script>
 $(".add-one").click(function () {
-    var formInputLen = $('.uniName').length;
-    $(".eduHistory").append('<div class="form-group"><div class="row"><div class="col-md-1"></div><div class="col-md-4"><label for="uniName' + (formInputLen + 1) +'" >Highschool / College / University</label><input type="text" class="form-control input-lg" id="uniName' + (formInputLen + 1) +'"  name="uniName"></div><div class="col-md-3"><div class="form-group"><label for="uniFrom' + (formInputLen + 1) +'">attended from</label><input type="date" class="form-control input-lg" id="uniFrom' + (formInputLen + 1) +'" name="uniFrom' + (formInputLen + 1) +'"></div></div><div class="col-md-3"><div class="form-group"><label for="uniTo' + (formInputLen + 1) +'">until</label><input type="date" class="form-control input-lg" id="uniTo' + (formInputLen + 1) +'" name="uniTo' + (formInputLen + 1) +'"></div></div><div class="col-md-1"></div></div></div> ');
+    var formInputLen = $("input[id*='nameUni']").length;
+    $(".eduHistory").append('<div class="form-group"><div class="row"><div class="col-md-1"></div><div class="col-md-4"><label class="form-control-label" for="nameUni' + (formInputLen + 1) +'" >Highschool / College / University</label><input type="text" class="form-control input-lg" id="nameUni' + (formInputLen + 1) +'" name="nameUni' + (formInputLen + 1) +'"></div><div class="col-md-3"><div class="form-group"><label class="form-control-label" for="fromUni' + (formInputLen + 1) +'">attended from</label><input type="date" class="form-control input-lg" id="fromUni' + (formInputLen + 1) +'" name="fromUni' + (formInputLen + 1) +'"></div></div><div class="col-md-3"><div class="form-group"><label class="form-control-label" for="toUni' + (formInputLen + 1) +'">until</label><input type="date" class="form-control input-lg" id="toUni' + (formInputLen + 1) +'" name="toUni' + (formInputLen + 1) +'"></div></div><div class="col-md-1"></div></div></div> ');
     attach_delete();
 });
 
@@ -854,8 +857,6 @@ function attach_delete(){
   });
 }
 </script>
-
-<script type="text/javascript" src="app.js"></script>
 
 <!-- ADD COLLEGES END -->
 
@@ -881,5 +882,8 @@ function attach_delete(){
     cursor:pointer;
   }
 </style>
+
+<script type="text/javascript" src="app.js"></script>
+
     </body>
 </html>

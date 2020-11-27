@@ -3,7 +3,6 @@
 //grab a form, the . (dot) indicates a css/html class
 //const form = document.querySelector('.section_1');
 
-(function() {
     var firebaseConfig = {
       apiKey: "AIzaSyDZXbfuL17GbKVJ0Mdlgk9ouFPkVXNDYf0",
       authDomain: "tamucc-quickapp.firebaseapp.com",
@@ -73,7 +72,9 @@
       });
     }
 
-function check(e){ 
+    document.getElementById('Submit').addEventListener('Submit', check);
+
+function check(e){
         e.preventDefault();
           //and now anything else you want to do.
       //Gets Value of form HTML elements
@@ -161,8 +162,7 @@ function check(e){
           }
       }
       push_to_firebase(data);
-    }
-  })();
+    };
 
   //---------------------------------------
   // GET ID VALUE FROM URL
