@@ -27,7 +27,7 @@
         crossorigin="anonymous"></script>
     <!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js" integrity="sha512-baRe8aL3+Cvo8XRk+YJ/1KdJDBi4ay7ENnfap/gEdRR+rz0rCTHBNDVCYm6HlR3WmMFCvRS4fZk2qNJIYyPgGQ==" crossorigin="anonymous"></script> -->
     <!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/additional-methods.min.js" integrity="sha512-uX1/sEB4HxRH0cfnwYTjMCTutZ37/qfG/FfptZzod+f0+oGbCfw4if79u3SHuJR8BCK62+iZAjIdbl6kQE6TAw==" crossorigin="anonymous"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/popper.min.js" integrity="sha512-eHo1pysFqNmmGhQ8DnYZfBVDlgFSbv3rxS0b/5+Eyvgem/xk0068cceD8GTlJOZsUrtjANIrFhhlwmsL1K3PKg==" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/popper.min.js" integrity="sha512-eHo1pysFqNmmGhQ8DnYZfBVDlgFSbv3rxS0b/5+Eyvgem/xk0068cceD8GTlJOZsUrtjANIrFhhlwmsL1K3PKg==" crossorigin="anonymous"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha512-jCaU0Dp3IbMDlZ6f6dSEQSnOrSsugG6F6YigRWnagi7HoOLshF1kwxLT4+xCZRgQsTNqpUKj6WmWOxsu9l3URA=="
         crossorigin="anonymous"></script>
@@ -130,6 +130,11 @@
     </style>
     <style>
         .invalid-tooltip { font-size: 1rem; }
+        form label.required:after
+{
+    color: red;
+    content: " *";
+}
     </style>
 </head>
 
@@ -165,7 +170,7 @@
                                     </button>
                                 </div>
                                 <div class="navbar-collapse collapse">
-                                    <ul class="nav navbar-nav">
+                                    <ul class="nav">
                                         <li class="dropdown">
                                             <a href="https://tour.concept3d.com/share/eVorVitt7/stop/1"> Virtual Campus
                                                 Tour </a>
@@ -250,10 +255,10 @@
                                     <div class="input-group name">
                                         <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
                                             <input type="hidden" class="edit-userid">
-                                            <label class="form-control-label" for="first">First Name</label>
+                                            <label class="form-control-label required" for="first">First Name</label>
                                             <input type="text" class="form-control input-lg" id="first" name="first"
                                                 placeholder="First name" required>
-                                            <div class="invalid-tooltip">No first name? Enter "FNU"</div>
+                                            <div class="invalid-tooltip">No first name? Enter " FNU "</div>
                                         </div>
                                         <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
                                             <label class="form-control-label" for="middle">Middle Name</label>
@@ -261,13 +266,13 @@
                                                 placeholder="Middle name">
                                         </div>
                                         <div class="col-xs-9 col-sm-9 col-md-5 col-lg-5">
-                                            <label class="form-control-label" for="last">Last Name</label>
+                                            <label class="form-control-label required" for="last">Last Name</label>
                                             <input type="text" class="form-control input-lg" id="last" name="last"
                                                 placeholder="Last name" required />
-                                            <div class="invalid-tooltip">No last name? Enter "LNU"</div>
+                                            <div class="invalid-tooltip">No last name? Enter " LNU "</div>
                                         </div>
                                         <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2">
-                                            <label class="form-control-label" for="suffix">Suffix</label>!
+                                            <label class="form-control-label" for="suffix">Suffix</label>
                                             <input type="text" class="form-control input-lg" id="suffix" name="suffix"
                                                 placeholder="Suffix">
                                         </div>
@@ -284,7 +289,7 @@
                                     <div class="input-group biographical">
                                         <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
                                             <div class="form-group">
-                                                <label class="form-control-label" for="birthDate">Date of birth</label>
+                                                <label class="form-control-label required" for="birthDate">Date of birth</label>
                                                 <input type="date" class="form-control input-lg" id="birthDate"
                                                     name="birthDate" required />
                                                 <div class="invalid-tooltip">when were yiou born in MM/DD/YYYY format</div>
@@ -292,7 +297,7 @@
                                         </div>
                                         <div class="col-xs-6 col-sm-6 col-md-2 col-lg-2">
                                             <div class="form-group">
-                                                <label class="form-control-label" for="gender">Gender</label>
+                                                <label class="form-control-label required" for="gender">Gender</label>
                                                 <select id="gender" name="gender" class="form-control input-lg"
                                                     required>
                                                     <option value="">--select--</option>
@@ -304,7 +309,7 @@
                                             </div>
                                         </div>
                                         <div class="col-xs-6 col-sm-6 col-md-2 col-lg-2">
-                                            <label class="form-control-label" for="race">Race & Ethnicity</label>
+                                            <label class="form-control-label required" for="race">Race & Ethnicity</label>
                                             <select id="race" name="race" class="form-control input-lg" required>
                                                 <option value="">--select--</option>
                                                 <option value="Native">American Indian or Alaska Native</option>
@@ -319,14 +324,14 @@
                                         </div>
                                         <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
                                             <div class="form-group">
-                                                <label class="form-control-label" for="email">Email address</label>
+                                                <label class="form-control-label required" for="email">Email address</label>
                                                 <input type="email" class="form-control input-lg" id="email"
                                                     data-minlength="6" placeholder="Enter email" required />
                                                 <div class="invalid-tooltip">Please provide your email</div>
                                             </div>
                                         </div>
                                         <div class="col-xs-6 col-sm-6 col-md-2 col-lg-2">
-                                            <label class="form-control-label" for="phone">Phone</label>
+                                            <label class="form-control-label required" for="phone">Phone</label>
                                             <input type="phone" class="form-control input-lg" data-minlength="10"
                                                 id="phone" name="phone" placeholder="Enter your phone#" required />
                                                 <div class="invalid-tooltip">Please provide a ph# where we can reach you</div>
@@ -343,7 +348,7 @@
                                 <div class="row">
                                     <div class="input-group address">
                                         <div class="col-xs-9 col-sm-9 col-md-3 col-lg-3">
-                                            <label class="form-control-label" for="street1">Street</label>
+                                            <label class="form-control-label required" for="street1">Street</label>
                                             <input type="text" class="form-control input-lg" id="street1" name="street1"
                                                 placeholder="1234 Somewhere Ln" required />
                                             <div class="invalid-tooltip">What is your street address?</div>
@@ -354,13 +359,13 @@
                                                 placeholder="Apt 3">
                                         </div>
                                         <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-                                            <label class="form-control-label" for="city">City</label>
+                                            <label class="form-control-label required" for="city">City</label>
                                             <input type="text" class="form-control input-lg" id="city" name="city"
                                                 placeholder="City" required />
                                                 <div class="invalid-tooltip">In what CITY do you live?</div>
                                         </div>
                                         <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2">
-                                            <label class="form-control-label" for="state">State</label>
+                                            <label class="form-control-label required" for="state">State</label>
                                             <select class="form-control input-lg" id="state" name="state"
                                                 placeholder="State" required>
                                                 <option value="TX">TX</option>
@@ -420,7 +425,7 @@
                                             <div class="invalid-tooltip">In what STATE do you live? Select "none" if you live outside of the U.S.</div>
                                         </div>
                                         <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2">
-                                            <label class="form-control-label" for="zip">ZIP</label>
+                                            <label class="form-control-label required" for="zip">ZIP</label>
                                             <input type="text" class="form-control input-lg" id="zip" name="zip"
                                                 placeholder="Zip code" required />
                                                 <div class="invalid-tooltip">What is your zip code?</div>
@@ -437,7 +442,7 @@
                                 <div class="row">
                                     <div class="input-group Country">
                                         <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
-                                            <label class="form-control-label" for="country">Country</label>
+                                            <label class="form-control-label required" for="country">Country</label>
                                             <select class="form-control input-lg" id="country" name="country" required>
                                                 <option value="AF">Afghanistan</option>
                                                 <option value="AX">Åland Islands</option>
@@ -687,7 +692,7 @@
                                             <div class="invalid-tooltip">In what COUNTRY do you live?</div>
                                         </div>
                                         <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-                                            <label class="form-control-label" for="citizenship">Citizenship
+                                            <label class="form-control-label required" for="citizenship">Citizenship
                                                 status</label>
                                             <select id="citizenship" name="citizenship" class="form-control input-lg"
                                                 required>
@@ -698,7 +703,7 @@
                                             <div class="invalid-tooltip">Are you a U.S. Citizen?</div>
                                         </div>
                                         <div class='col-xs-6 col-sm-6 col-md-4 col-lg-4'>
-                                            <label class="form-control-label" for="birthPlace">Place of birth</label>
+                                            <label class="form-control-label required" for="birthPlace">Place of birth</label>
                                             <input type="text" class="form-control input-lg" id="birthPlace"
                                                 name="birthPlace" placeholder="Corpus Christi, TX" required />
                                             <div class="invalid-tooltip">In what city were you born?</div>
@@ -716,7 +721,7 @@
                                     <div class="form-group Major">
                                         <div class="col-md-3"></div>
                                         <div class="col-md-4">
-                                            <label class="form-control-label" for="major">Major</label>
+                                            <label class="form-control-label required" for="major">Major</label>
                                             <select id="major" name="major" class="form-control input-lg" required>
                                                 <option value="">Select your Major</option>
                                                 <option value="ACCT">ACCOUNTING</option>
@@ -763,7 +768,7 @@
                                             <div class="invalid-tooltip">Please select a major</div>
                                         </div>
                                         <div class="col-md-3">
-                                            <label class="form-control-label" for="semester">Semester</label>
+                                            <label class="form-control-label required" for="semester">Semester</label>
                                             <select id="semester" name="semester" class="form-control input-lg"
                                                 required>
                                                 <option value="">Select semester</option>
@@ -795,7 +800,7 @@
 
                                                 <!-- Replace these fields -->
                                                 <div class="col-md-4">
-                                                    <label class="form-control-label" for="nameUni1">Highschool /
+                                                    <label class="form-control-label required" for="nameUni1">Highschool /
                                                         College /
                                                         University</label>
                                                     <input type="text" class="form-control input-lg" id="nameUni1"
@@ -804,7 +809,7 @@
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group">
-                                                        <label class="form-control-label" for="fromUni1">attended
+                                                        <label class="form-control-label required" for="fromUni1">attended
                                                             from</label>
                                                         <input type="date" class="form-control input-lg" id="fromUni1"
                                                             name="fromUni1" required />
@@ -813,7 +818,7 @@
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group">
-                                                        <label class="form-control-label" for="toUni1">until</label>
+                                                        <label class="form-control-label required" for="toUni1">until</label>
                                                         <input type="date" class="form-control input-lg" id="toUni1"
                                                             name="toUni1" required />
                                                         <div class="invalid-tooltip">When did you finish studying there? (mm/dd/yyyy)</div>
@@ -994,22 +999,21 @@
         $(".add-one").click(function () {
             var formInputLen = $("input[id*='nameUni']").length;
             $(".eduHistory").append(
-                '<div class="form-group"><div class="row"><div class="col-md-1"></div><div class="col-md-4"><label class="form-control-label" for="nameUni' +
+                '<div class="form-group"><div class="row"><div class="col-md-1"></div><div class="col-md-4"><label class="form-control-label required" for="nameUni' +
                 (formInputLen + 1) +
                 '" >Highschool / College / University</label><input type="text" class="form-control input-lg" id="nameUni' +
                 (formInputLen + 1) + '" name="nameUni' + (formInputLen + 1) +
-                '"></div><div class="col-md-3"><div class="form-group"><label class="form-control-label" for="fromUni' +
+                '"></div><div class="col-md-3"><div class="form-group"><label class="form-control-label required" for="fromUni' +
                 (formInputLen + 1) +
                 '">attended from</label><input type="date" class="form-control input-lg" id="fromUni' + (
                     formInputLen + 1) + '" name="fromUni' + (formInputLen + 1) +
-                '"></div></div><div class="col-md-3"><div class="form-group"><label class="form-control-label" for="toUni' +
+                '"></div></div><div class="col-md-3"><div class="form-group"><label class="form-control-label required" for="toUni' +
                 (formInputLen + 1) +
                 '">until</label><input type="date" class="form-control input-lg" id="toUni' + (
                     formInputLen + 1) + '" name="toUni' + (formInputLen + 1) +
-                '"></div></div><div class="col-md-1"></div></div></div> ');
+                '"></div></div><div class="col-md-1"><label for="">&nbsp;</label><p class="delete">x</p></div></div></div> ');
             attach_delete();
         });
-
         //Attach functionality to delete buttons
         function attach_delete() {
             $('.delete').off();
