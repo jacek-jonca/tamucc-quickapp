@@ -255,6 +255,105 @@ function check(e) {
     var major = document.getElementById('major').value;
     var semester = document.getElementById('semester').value;
 
+// Biographical data make sure it is not empty
+    if (!document.getElementById('email')) {
+        var email = "Empty";
+    } else {
+        var email = document.getElementById('email').value;
+    }
+    if (!document.getElementById('first')) {
+        var first = "Empty";
+    } else {
+        var first = document.getElementById('first').value;
+    }
+    if (!document.getElementById('middle')) {
+        var middle = "Empty";
+    } else {
+        var middle = document.getElementById('middle').value;
+    }
+    if (!document.getElementById('last')) {
+        var last = "Empty";
+    } else {
+        var last = document.getElementById('last').value;
+    }
+    if (!document.getElementById('suffix')) {
+        var suffix = "Empty";
+    } else {
+        var suffix = document.getElementById('suffix').value;
+    }
+    if (!document.getElementById('birthDate')) {
+        var birthDate = "Empty";
+    } else {
+        var birthDate = document.getElementById('birthDate').value;
+    }
+    if (!document.getElementById('gender')) {
+        var gender = "Empty";
+    } else {
+        var gender = document.getElementById('gender').value;
+    }
+    if (!document.getElementById('race')) {
+        var race = "Empty";
+    } else {
+        var race = document.getElementById('race').value;
+    }
+    if (!document.getElementById('phone')) {
+        var phone = "Empty";
+    } else {
+        var phone = document.getElementById('phone').value;
+    }
+    if (!document.getElementById('street1')) {
+        var street1 = "Empty";
+    } else {
+        var street1 = document.getElementById('street1').value;
+    }
+    if (!document.getElementById('street2')) {
+        var street2 = "Empty";
+    } else {
+        var street2 = document.getElementById('street2').value;
+    }
+    if (!document.getElementById('city')) {
+        var city = "Empty";
+    } else {
+        var city = document.getElementById('city').value;
+    }
+    if (!document.getElementById('state')) {
+        var state = "Empty";
+    } else {
+        var state = document.getElementById('state').value;
+    }
+    if (!document.getElementById('zip')) {
+        var zip = "Empty";
+    } else {
+        var zip = document.getElementById('zip').value;
+    }
+    if (!document.getElementById('country')) {
+        var country = "Empty";
+    } else {
+        var country = document.getElementById('country').value;
+    }
+    if (!document.getElementById('citizenship')) {
+        var citizenship = "Empty";
+    } else {
+        var citizenship = document.getElementById('citizenship').value;
+    }
+    if (!document.getElementById('birthPlace')) {
+        var birthPlace = "Empty";
+    } else {
+        var birthPlace = document.getElementById('birthPlace').value;
+    }
+    if (!document.getElementById('major')) {
+        var major = "Empty";
+    } else {
+        var major = document.getElementById('major').value;
+    }
+    if (!document.getElementById('semester')) {
+        var semester = "Empty";
+    } else {
+        var semester = document.getElementById('semester').value;
+    }
+
+// University data make sure it is not empty
+
     if (!document.getElementById('nameUni1')) {
         var nameUni1 = "Empty";
     } else {
