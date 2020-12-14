@@ -160,6 +160,73 @@
     content: " *";
 }
     </style>
+
+<!-- Checkbox switches style-->
+<style>
+/*
+*
+* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================
+*
+*/
+/* toggle switches with bootstrap default colors */
+.custom-control-input-success:checked ~ .custom-control-label::before {
+    background-color: #28a745 !important;
+    border-color: #28a745 !important;
+}
+
+.custom-control-input-danger:checked ~ .custom-control-label::before {
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
+}
+
+ .custom-control-input-warning:checked ~ .custom-control-label::before {
+    background-color: #ffc107 !important;
+    border-color: #ffc107 !important;
+}
+
+.custom-control-input-info:checked ~ .custom-control-label::before {
+    background-color: #17a2b8 !important;
+    border-color: #17a2b8 !important;
+}
+
+/* Large toggl switches */
+.custom-switch-lg .custom-control-label::before {
+    left: -2.25rem;
+    width: 3rem;
+    border-radius: 1.5rem;
+}
+
+.custom-switch-lg .custom-control-label::after {
+    top: calc(.25rem + 3px);
+    left: calc(-2.25rem + 4px);
+    width: calc(1.5rem - 6px);
+    height: calc(1.5rem - 6px);
+    border-radius: 1.5rem;
+}
+
+.custom-switch-lg .custom-control-input:checked ~ .custom-control-label::after {
+    transform: translateX(1.4rem);
+}
+
+.custom-switch-lg .custom-control-label::before {
+    height: 1.5rem;
+}
+
+.custom-switch-lg .custom-control-label {
+    padding-left: 1.5rem;
+    line-height: 1.7rem;
+}
+
+input[type=checkbox]+label, input[type=radio]+label {
+    border: 2px solid #0067C5;
+    background: none; 
+    font-size: 20px !important;
+}
+
+</style>
+
 </head>
 
 <body id="Body">
@@ -242,7 +309,7 @@
                                     <div class="content_box">
                                         <h2>Okay, we are almost done!
                                         </h2>
-                                        <p>First and foremost we want to make your tition as affordable as possible. That si why we have below a link to series of questions that could drastically lower your tuition. In addition to this we have some mandatory legaleese for you to review.
+                                        <p style="text-align:left">First and foremost we want to make your tuition as affordable as possible. That is why we ask a series of questions that could drastically lower your tuition. But first we have some legaleese that state law makes us ask you.
                                         </p>
                                         <!-- <p>&nbsp;</p> -->
                                     </div>
@@ -252,16 +319,48 @@
                             <fieldset>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <div class="content_box">
-                                            <p>Notification of Rights under Texas Law*</p>
-                                            <p>Information collected about you through this application may be held by any institution of higher education to which you apply. With few exceptions, you are entitled on your request to be informed about the collected information. Under Sections 552.021 and 552.023 of the Texas Government Code, you are entitled to receive and review the information. Under section 559.004 of the Texas Government Code, you are entitled to correct information held by an institution that is incorrect. You may correct information held by any institution to which you apply by contacting the institution. The information that is collected about you will be retained and maintained as required by Texas records retention laws (Section 441.180 et seq. of the Texas Government Code) and rules. Different types of information are kept for different periods of time.</p><br />
-
+                                        <p class="custom-control custom-switch custom-switch-lg m-0">
+                                            <input class="custom-control-input custom-control-input-danger" id="customSwitch12" type="checkbox" required />
+                                            <label class="custom-control-label font-italic" for="customSwitch12">I agree</label>
+                                            <p>Notification of Rights under Texas Law</p>
+                                            <p style="text-align:left; font-color:white; font-size: 12px;">Information collected about you through this application may be held by any institution of higher education to which you apply. With few exceptions, you are entitled on your request to be informed about the collected information. Under Sections 552.021 and 552.023 of the Texas Government Code, you are entitled to receive and review the information. Under section 559.004 of the Texas Government Code, you are entitled to correct information held by an institution that is incorrect. You may correct information held by any institution to which you apply by contacting the institution. The information that is collected about you will be retained and maintained as required by Texas records retention laws (Section 441.180 et seq. of the Texas Government Code) and rules. Different types of information are kept for different periods of time.</p>
+                                        </p>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <p class="custom-control custom-switch custom-switch-lg m-0">
+                                                <input class="custom-control-input custom-control-input-danger" id="customSwitch12" type="checkbox" required />
+                                                <label class="custom-control-label font-italic" for="customSwitch12">I agree</label>
+                                            </p>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <div class="content_box">
+                                                <p>Notification of Rights under Texas Law</p>
+                                                <p style="text-align:left">Information collected about you through this application may be held by any institution of higher education to which you apply. With few exceptions, you are entitled on your request to be informed about the collected information. Under Sections 552.021 and 552.023 of the Texas Government Code, you are entitled to receive and review the information. Under section 559.004 of the Texas Government Code, you are entitled to correct information held by an institution that is incorrect. You may correct information held by any institution to which you apply by contacting the institution. The information that is collected about you will be retained and maintained as required by Texas records retention laws (Section 441.180 et seq. of the Texas Government Code) and rules. Different types of information are kept for different periods of time.</p>
+                                            </div>
+                                        </div>                                                
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <p class="custom-control custom-switch custom-switch-lg m-0">
+                                                <input class="custom-control-input custom-control-input-danger" id="customSwitch12" type="checkbox" required />
+                                                <label class="custom-control-label font-italic" for="customSwitch12">I agree</label>
+                                            </p>
+                                        </div>
+                                        <div class="col-md-10">    
                                             <p>Terms & Conditions*</p>
-                                            <p>If my application is accepted, I agree to abide by the policies, rules and regulations at any college to which I am admitted. I authorize the college to verify the information I have provided. I certify that the information I have provided is complete and correct and I understand that the submission of false information is grounds for rejection of my application, withdrawal of any offer of acceptance, cancellation of enrollment and/or appropriate disciplinary action. I understand that officials of my college will use the information submitted on this form to determine my status for residency eligibility. I authorize the college to electronically access my records regarding the Texas Success Initiative. I agree to notify the proper officials of the institution of any changes in the information provided.</p><br />
-
+                                            <p style="text-align:left">If my application is accepted, I agree to abide by the policies, rules and regulations at any college to which I am admitted. I authorize the college to verify the information I have provided. I certify that the information I have provided is complete and correct and I understand that the submission of false information is grounds for rejection of my application, withdrawal of any offer of acceptance, cancellation of enrollment and/or appropriate disciplinary action. I understand that officials of my college will use the information submitted on this form to determine my status for residency eligibility. I authorize the college to electronically access my records regarding the Texas Success Initiative. I agree to notify the proper officials of the institution of any changes in the information provided.</p><br />
+                                        </div>
+                                    </div>                                            
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <p class="custom-control custom-switch custom-switch-lg m-0">
+                                                <input class="custom-control-input custom-control-input-danger" id="customSwitch12" type="checkbox" required />
+                                                <label class="custom-control-label font-italic" for="customSwitch12">I agree</label>
+                                            </p>
+                                        </div>
+                                        <div class="col-md-10">
                                             <p>Non-Discrimination Clause*</p>
-                                            <p>Admission to any of the Texas institutions of higher education and any of their sponsored programs is open to qualified individuals regardless of race, color, gender, sexual orientation, creed, age, national origin or disability.</p><br />
-
+                                            <p style="text-align:left">Admission to any of the Texas institutions of higher education and any of their sponsored programs is open to qualified individuals regardless of race, color, gender, sexual orientation, creed, age, national origin or disability.</p><br />
                                         </div>
                                     </div>
                                 </div>
