@@ -9,32 +9,7 @@
     <meta name="title" content="Texas A&M University-Corpus Christi QuickApp" />
     <meta name="description" content="Texas A&M University-Corpus Christi Quick Application" />
 
-    <meta content="Texas A&amp;M University-Corpus Christi QuickApp" property="og:site_name" />
-    <meta content="no-cache" http-equiv="Cache-control" />
-    <meta content="./assets/img/icons/home-social-2.jpg" name="twitter:image" property="og:image" />
-    <meta content="image/jpeg" property="og:image:type" />
-    <meta content="1200" property="og:image:width" />
-    <meta content="630" property="og:image:height" />
-    <meta content="Texas A&amp;M University-Corpus Christi" name="author" />
-    <link href="./assets/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" />
-    <link href="./assets/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" />
-    <link href="./assets/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" />
-    <link href="./assets/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" />
-    <link href="./assets/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" />
-    <link href="./assets/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" />
-    <link href="./assets/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" />
-    <link href="./assets/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" />
-    <link href="./assets/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" />
-    <link href="./assets/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" />
-    <link href="./assets/img/icons/android-chrome-192x192.png" rel="icon" sizes="192x192" type="image/png" />
-    <link href="./assets/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" />
-    <link href="./assets/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" />
-    <link href="./assets/img/icons/manifest.json" rel="manifest" />
-    <link color="#0067c5" href="./assets/img/icons/safari-pinned-tab.svg" rel="mask-icon" />
-    <link href="./assets/img/icons/favicon.ico" rel="shortcut icon" />
-    <meta content="#3fa3ff" name="msapplication-TileColor" />
-    <meta content="./assets/img/icons/mstile-144x144.png" name="msapplication-TileImage" />
-    <meta content="./assets/img/icons/browserconfig.xml" name="msapplication-config" />
+    <link rel="icon" type="images/ico" href="./assets/img/favicon.ico" />
 
     <!-- all CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css"
@@ -44,7 +19,7 @@
         rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <link href="assets/fonts/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    <link defer rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
         integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
         crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
@@ -64,15 +39,10 @@
     <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-functions.js"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/8.0.2/firebase-messaging.js"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/8.0.2/firebase-storage.js"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/8.0.2/firebase-analytics.js"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/8.0.2/firebase-remote-config.js"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/8.0.2/firebase-performance.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-performance.js"></script>
     <!-- 
       initialize the SDK after all desired features are loaded, set useEmulator to false
       to avoid connecting the SDK to running emulators.
@@ -154,38 +124,13 @@
         }
     </style>
     <style>
-        .invalid-tooltip {
-            font-size: 1rem;
-        }
-
-        form label.required:after {
-            color: red;
-            content: " *";
-        }
+        .invalid-tooltip { font-size: 1rem; }
+        form label.required:after
+{
+    color: red;
+    content: " *";
+}
     </style>
-        <!-- ADD ROW COLLEGES STYLE -->
-        <style>
-            .add-one {
-                text-align: center;
-                font-weight: 700;
-                cursor: pointer;
-                margin-top: -10px;
-                margin-bottom: 40px;
-            }
-    
-            .delete {
-                color: white;
-                background-color: rgb(231, 76, 60);
-                text-align: center;
-                margin-top: 6px;
-                font-weight: 700;
-                font-size: large;
-                border-radius: 5px;
-                min-width: 20px;
-                cursor: pointer;
-            }
-        </style>
-    
 </head>
 
 <body id="Body">
@@ -339,12 +284,10 @@
                                     <div class="input-group biographical">
                                         <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
                                             <div class="form-group">
-                                                <label class="form-control-label required" for="birthDate">Date of
-                                                    birth</label>
+                                                <label class="form-control-label required" for="birthDate">Date of birth</label>
                                                 <input type="date" class="form-control input-lg" id="birthDate"
                                                     name="birthDate" required />
-                                                <div class="invalid-tooltip">when were yiou born in MM/DD/YYYY format
-                                                </div>
+                                                <div class="invalid-tooltip">when were yiou born in MM/DD/YYYY format</div>
                                             </div>
                                         </div>
                                         <div class="col-xs-6 col-sm-6 col-md-2 col-lg-2">
@@ -361,8 +304,7 @@
                                             </div>
                                         </div>
                                         <div class="col-xs-6 col-sm-6 col-md-2 col-lg-2">
-                                            <label class="form-control-label required" for="race">Race &
-                                                Ethnicity</label>
+                                            <label class="form-control-label required" for="race">Race & Ethnicity</label>
                                             <select id="race" name="race" class="form-control input-lg" required>
                                                 <option value="">--select--</option>
                                                 <option value="Native">American Indian or Alaska Native</option>
@@ -377,8 +319,7 @@
                                         </div>
                                         <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
                                             <div class="form-group">
-                                                <label class="form-control-label required" for="email">Email
-                                                    address</label>
+                                                <label class="form-control-label required" for="email">Email address</label>
                                                 <input type="email" class="form-control input-lg" id="email"
                                                     data-minlength="6" placeholder="Enter email" required />
                                                 <div class="invalid-tooltip">Please provide your email</div>
@@ -386,10 +327,9 @@
                                         </div>
                                         <div class="col-xs-6 col-sm-6 col-md-2 col-lg-2">
                                             <label class="form-control-label required" for="phone">Phone</label>
-                                            <input type="tel" class="form-control input-lg" data-minlength="10"
+                                            <input type="phone" class="form-control input-lg" data-minlength="10"
                                                 id="phone" name="phone" placeholder="Enter your phone#" required />
-                                            <div class="invalid-tooltip">Please provide a ph# where we can reach you
-                                            </div>
+                                                <div class="invalid-tooltip">Please provide a ph# where we can reach you</div>
                                         </div>
                                     </div>
                                 </div>
@@ -417,7 +357,7 @@
                                             <label class="form-control-label required" for="city">City</label>
                                             <input type="text" class="form-control input-lg" id="city" name="city"
                                                 placeholder="City" required />
-                                            <div class="invalid-tooltip">In what CITY do you live?</div>
+                                                <div class="invalid-tooltip">In what CITY do you live?</div>
                                         </div>
                                         <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2">
                                             <label class="form-control-label required" for="state">State</label>
@@ -477,14 +417,13 @@
                                                 <option value="WV">WV</option>
                                                 <option value="WY">WY</option>
                                             </select>
-                                            <div class="invalid-tooltip">In what STATE do you live? Select "none" if you
-                                                live outside of the U.S.</div>
+                                            <div class="invalid-tooltip">In what STATE do you live? Select "none" if you live outside of the U.S.</div>
                                         </div>
                                         <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2">
                                             <label class="form-control-label required" for="zip">ZIP</label>
                                             <input type="text" class="form-control input-lg" id="zip" name="zip"
                                                 placeholder="Zip code" required />
-                                            <div class="invalid-tooltip">What is your zip code?</div>
+                                                <div class="invalid-tooltip">What is your zip code?</div>
                                         </div>
                                     </div>
                                 </div>
@@ -759,8 +698,7 @@
                                             <div class="invalid-tooltip">Are you a U.S. Citizen?</div>
                                         </div>
                                         <div class='col-xs-6 col-sm-6 col-md-4 col-lg-4'>
-                                            <label class="form-control-label required" for="birthPlace">Place of
-                                                birth</label>
+                                            <label class="form-control-label required" for="birthPlace">Place of birth</label>
                                             <input type="text" class="form-control input-lg" id="birthPlace"
                                                 name="birthPlace" placeholder="Corpus Christi, TX" required />
                                             <div class="invalid-tooltip">In what city were you born?</div>
@@ -834,8 +772,7 @@
                                                 <option value=" 20217">Summer II 2021</option>
                                                 <option value=" 20219">Fall (Aug - Dec) 2021</option>
                                             </select>
-                                            <div class="invalid-tooltip">When would you like to begin your studies?
-                                            </div>
+                                            <div class="invalid-tooltip">When would you like to begin your studies?</div>
                                         </div>
                                         <div class="col-md-2"></div>
                                     </div>
@@ -858,8 +795,7 @@
 
                                                 <!-- Replace these fields -->
                                                 <div class="col-md-4">
-                                                    <label class="form-control-label required" for="nameUni1">Highschool
-                                                        /
+                                                    <label class="form-control-label required" for="nameUni1">Highschool /
                                                         College /
                                                         University</label>
                                                     <input type="text" class="form-control input-lg" id="nameUni1"
@@ -868,23 +804,19 @@
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group">
-                                                        <label class="form-control-label required"
-                                                            for="fromUni1">attended
+                                                        <label class="form-control-label required" for="fromUni1">attended
                                                             from</label>
                                                         <input type="date" class="form-control input-lg" id="fromUni1"
                                                             name="fromUni1" required />
-                                                        <div class="invalid-tooltip">When did you start studying there?
-                                                            (mm/dd/yyyy)</div>
+                                                            <div class="invalid-tooltip">When did you start studying there? (mm/dd/yyyy)</div>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group">
-                                                        <label class="form-control-label required"
-                                                            for="toUni1">until</label>
+                                                        <label class="form-control-label required" for="toUni1">until</label>
                                                         <input type="date" class="form-control input-lg" id="toUni1"
                                                             name="toUni1" required />
-                                                        <div class="invalid-tooltip">When did you finish studying there?
-                                                            (mm/dd/yyyy)</div>
+                                                        <div class="invalid-tooltip">When did you finish studying there? (mm/dd/yyyy)</div>
                                                     </div>
                                                 </div>
                                                 <!-- End of fields-->
@@ -906,7 +838,6 @@
                                             <p class="add-one btn btn-success">+ Add another school</p>
                                         </div>
                                     </div>
-                                </div>
                             </fieldset>
                             <div class="row">
                                 <!-- <p>&nbsp;</p> -->
@@ -915,7 +846,7 @@
                                     <!--                            <button type="button" class="btn btn-danger btn-lg" onclick="check(event)">Submit</button> -->
                                     <button type="button" id="submit" name="submit"
                                         class="btn btn-danger btn-lg has-spinner-two" onclick="check(event)">
-                                        NEXT STEP >> PAY APPLICATION FEE!
+                                        CLICK HERE TO APPLY!
                                     </button>
                                 </div>
                             </div>
@@ -955,21 +886,19 @@
             <footer>
                 <div class="container">
                     <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 text-center" style="padding-bottom: 2ex;">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 text-center">
                             <!-- <p>&nbsp;</p> -->
                             <a href="http://www.tamus.edu/" rel="noopener noreferrer" target="_blank">
                                 <img alt="Texas A&amp;M System" width="100" height="76"
-                                    src="./assets/img/tamus_logo.svg" />
+                                    src="https://www.tamucc.edu/images/logo-tamus.png" />
                             </a>
                             <!-- <p>&nbsp;</p> -->
                         </div>
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 text-center">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
                             <ul class="footer_links">
                                 <li>
                                     <a href="https://tamucc.edu"> Texas A&amp;M University-Corpus Christi </a>
                                 </li>
-                            </ul>
-                            <ul class="footer_links">
                                 <li>
                                     <a href="https://goo.gl/maps/m6WY67JaBGs"> 6300 Ocean Dr. &nbsp;&#8226;&nbsp; Corpus
                                         Christi, TX 78412 </a>
@@ -987,14 +916,41 @@
                                         Us</a>
                                 </li>
                                 <li><a
-                                        href="http://www.tamucc.edu/about/privacy.html?utm_source=footer&amp;utm_campaign=tamucc.edu&amp;utm_medium=privacy_statement">Privacy</a>
+                                        href="http://www.tamucc.edu/about/employment.html?utm_source=footer&amp;utm_campaign=tamucc.edu&amp;utm_medium=employment">Employment</a>
+                                </li>
+                                <li><a
+                                        href="http://www.tamucc.edu/about/privacy.html?utm_source=footer&amp;utm_campaign=tamucc.edu&amp;utm_medium=privacy_statement">Privacy
+                                        Statement</a>
                                 </li>
                                 <li><a
                                         href="http://www.tamucc.edu/about/accessibility.html?utm_source=footer&amp;utm_campaign=tamucc.edu&amp;utm_medium=accessibility">ADA/Accessibility</a>
                                 </li>
                                 <li><a
+                                        href="http://www.tamucc.edu/about/open_records.html?utm_source=footer&amp;utm_campaign=tamucc.edu&amp;utm_medium=open_records">
+                                        Open Records</a>
+                                </li>
+                                <li><a href="https://secure.ethicspoint.com/domain/en/report_custom.asp?clientid=19681&amp;utm_source=footer&amp;utm_campaign=tamucc.edu&amp;utm_medium=risk_fraud_misconduct_hotline"
+                                        rel="noopener noreferrer" target="_blank">Risk, Fraud &amp; Misconduct
+                                        Hotline</a>
+                                </li>
+                                <li><a
                                         href="https://veterans.portal.texas.gov/?utm_source=footer&amp;utm_campaign=tamucc.edu&amp;utm_medium=veterans_portal">Veterans
                                         Portal</a>
+                                </li>
+                                <li><a href="https://texas.gov/?utm_source=footer&amp;utm_campaign=tamucc.edu&amp;utm_medium=texas_gov"
+                                        rel="noopener noreferrer" target="_blank">Texas.gov</a>
+                                </li>
+                                <li><a href="https://gov.texas.gov/organization/hsgd/?utm_source=footer&amp;utm_campaign=tamucc.edu&amp;utm_medium=texas_homeland_security"
+                                        rel="noopener noreferrer" target="_blank">Texas Homeland Security</a>
+                                </li>
+                                <li><a href="https://pubext.dir.texas.gov/portal/internal/resources/DocumentLibrary/State%20Website%20Linking%20and%20Privacy%20Policy.pdf?utm_source=footer&amp;utm_campaign=tamucc.edu&amp;utm_medium=state_linking_policy"
+                                        rel="noopener noreferrer" target="_blank">State Linking Policy</a>
+                                </li>
+                                <li><a href="http://www.tsl.state.tx.us/trail/?utm_source=footer&amp;utm_campaign=tamucc.edu&amp;utm_medium=TRAIL"
+                                        rel="noopener noreferrer" target="_blank">TRAIL</a>
+                                </li>
+                                <li><a href="http://www.tamucc.edu/about/CS_Standards_Report2008.pdf?utm_source=footer&amp;utm_campaign=tamucc.edu&amp;utm_medium=compact_with_texans"
+                                        rel="noopener noreferrer" target="_blank">Compact with Texans</a>
                                 </li>
                             </ul>
                         </div>
@@ -1035,39 +991,219 @@
     <!-- Adapted from https://jsfiddle.net/8xcs1xcc/ and https://stackoverflow.com/questions/25888954/dynamic-form-field-creation-with-increment -->
 
     <script>
-        $(".add-one").click(function () {
-            var formInputLen = $("input[id*='nameUni']").length;
-            $(".eduHistory").append(
-                '<div class="form-group"><div class="row"><div class="col-md-1"></div><div class="col-md-4"><label class="form-control-label required" for="nameUni' +
-                (formInputLen + 1) +
-                '" >Highschool / College / University</label><input type="text" class="form-control input-lg" id="nameUni' +
-                (formInputLen + 1) + '" name="nameUni' + (formInputLen + 1) +
-                '"></div><div class="col-md-3"><div class="form-group"><label class="form-control-label required" for="fromUni' +
-                (formInputLen + 1) +
-                '">attended from</label><input type="date" class="form-control input-lg" id="fromUni' +
-                (formInputLen + 1) + '" name="fromUni' + (formInputLen + 1) +
-                '"></div></div><div class="col-md-3"><div class="form-group"><label class="form-control-label required" for="toUni' +
-                (formInputLen + 1) +
-                '">until</label><input type="date" class="form-control input-lg" id="toUni' + 
-                (formInputLen + 1) + '" name="toUni' + (formInputLen + 1) +
-                '"></div></div><div class="col-md-1"><label for="">&nbsp;</label><p class="delete">x</p></div></div></div> '
-                );
-            attach_delete();
-        });
-        //Attach functionality to delete buttons
-        function attach_delete() {
-            $('.delete').off();
-            $('.delete').click(function () {
-                console.log("click");
-                $(this).closest('.form-group').remove();
-            });
-        }
+// Required for side-effects
+
+var firebaseConfig = {
+    apiKey: "AIzaSyDZXbfuL17GbKVJ0Mdlgk9ouFPkVXNDYf0",
+    authDomain: "tamucc-quickapp.firebaseapp.com",
+    databaseURL: "https://tamucc-quickapp.firebaseio.com",
+    projectId: "tamucc-quickapp",
+    storageBucket: "tamucc-quickapp.appspot.com",
+    messagingSenderId: "1090008470366",
+    appId: "1:1090008470366:web:1af562cc2cb9e0b2a175cf",
+    measurementId: "G-XJ2H42HPRM"
+};
+
+firebase.initializeApp(firebaseConfig);
+
+var db = firebase.firestore();
+
+var data =[
+  {
+    "userId": "0031R00002JCMCJ",
+    "first": "DanetteTest",
+    "last": "Gutierrez",
+    "street1": "6300 Ocean Dr",
+    "city": "Corpus Christi",
+    "state": "TX",
+    "zip": "78412",
+    "phone": "(214) 335-4195",
+    "email": "danette.gutierrez@tamucc.edu",
+    "nameUni1": "Unknown School"
+  },
+  {
+    "userId": "0031R00002JCMBz",
+    "first": "DustinTest",
+    "last": "Meiron",
+    "street1": "6300 Ocean Dr",
+    "city": "Corpus Christi",
+    "state": "TX",
+    "zip": "78412",
+    "phone": "(254) 485-4551",
+    "email": "dustin.meiron@tamucc.edu",
+    "nameUni1": "Unknown School"
+  },
+  {
+    "userId": "0033600001S191e",
+    "first": "LindaLeighTest",
+    "last": "BarbatoTest",
+    "street1": "6300 Ocean Drive Unit 5771",
+    "city": "Corpus Christi",
+    "state": "TX",
+    "zip": "78412",
+    "phone": "361-825-5923",
+    "email": "lindalramon@yahoo.com",
+    "nameUni1": "TEXAS TECH UNIVERSITY"
+  },
+  {
+    "userId": "0033600001LPjFo",
+    "first": "LindaTest",
+    "last": "Barbato",
+    "street1": "4430 Lake Superior Dr",
+    "city": "Corpus Christi",
+    "state": "TX",
+    "zip": "78413-5774",
+    "phone": "361-549-2282",
+    "email": "lindybarbato@gmail.com",
+    "nameUni1": "RICHARD KING HIGH SCHOOL"
+  },
+  {
+    "userId": "0031R00002JCMCd",
+    "first": "LoidaTest",
+    "last": "Utley",
+    "street1": "6300 Ocean Dr",
+    "city": "Corpus Christi",
+    "state": "TX",
+    "zip": "78412",
+    "phone": "(361) 455-6105",
+    "email": "loida.utley@tamucc.edu",
+    "nameUni1": "Unknown School"
+  },
+  {
+    "userId": "0031R00002GsWSn",
+    "first": "TestMaggie",
+    "last": "TestCano",
+    "street1": "6300 Ocean Dr",
+    "city": "Corpus Christi",
+    "state": "TX",
+    "zip": "78412-5503",
+    "phone": "(361) 455-6105",
+    "email": "maggie.cano@tamucc.edu",
+    "nameUni1": "Unknown School"
+  },
+  {
+    "userId": "00336000011fT8V",
+    "first": "MaggieTest",
+    "last": "CanoTest",
+    "street1": "4657 Ocean Dr. #119",
+    "city": "Corpus Christi",
+    "state": "TX",
+    "zip": "78412",
+    "phone": "409-554-1622",
+    "email": "maggie.cano39@yahoo.com",
+    "nameUni1": "UVALDE HIGH SCHOOL"
+  },
+  {
+    "userId": "0031R00002JBduk",
+    "first": "OscarTest",
+    "last": "ReynaTest",
+    "street1": "6300 Ocean Drive",
+    "city": "Corpus Christi",
+    "state": "TX",
+    "zip": "78412",
+    "phone": "(361) 813-0321",
+    "email": "oscar.reyna@tamucc.edu",
+    "nameUni1": "ROY MILLER SENIOR HIGH SCHOOL"
+  },
+  {
+    "userId": "0031R00002GtBCT",
+    "first": "ReneTest",
+    "last": "ZamoraTest",
+    "street1": "610 W Blackburn St",
+    "city": "Mathis",
+    "state": "TX",
+    "zip": "78368",
+    "phone": "361-877-6597",
+    "email": "rene.zamora@tamucc.edu",
+    "nameUni1": "MATHIS HIGH SCHOOL"
+  },
+  {
+    "userId": "0031R00002JCMCs",
+    "first": "RobertTest",
+    "last": "Benavides",
+    "street1": "6300 Ocean Dr",
+    "city": "Corpus Christi",
+    "state": "TX",
+    "zip": "78412",
+    "phone": "(956) 367-1028",
+    "email": "robert.benavides@tamucc.edu",
+    "nameUni1": "Unknown School"
+  },
+  {
+    "userId": "0031R00002JCMCY",
+    "first": "SantosTest",
+    "last": "Pagan",
+    "street1": "6300 Ocean Dr",
+    "city": "Corpus Christi",
+    "state": "TX",
+    "zip": "78412",
+    "phone": "(864) 321-9645",
+    "email": "santos.pagan@tamucc.edu",
+    "nameUni1": "Unknown School"
+  }
+]
+
+data.forEach(function(obj) {
+    console.log(db.collection('data'));
+    db.collection('data').doc(obj.userId).add({
+        userId: obj.userId,
+        email: obj.email,
+        first: obj.first,
+        middle: "NA",
+        last: obj.last,
+        suffix: "NA",
+        birthDate: "09-01-1939",
+        gender: "Female",
+        race: "Hispanic",
+        phone: obj.phone,
+        street1: obj.street1,
+        street2: obj.street2,
+        city: obj.city,
+        state: obj.state,
+        zip: obj.zip,
+        country: "US",
+        citizenship: "yes",
+        birthPlace: "San Antonio, TX",
+        major: "PSYC",
+        semester: "202101",
+        nameUni10: "Empty",
+        fromUni10: "Empty",
+        toUni10: "Empty",
+        nameUni1: obj.nameUni1,
+        fromUni1: "Empty",
+        toUni1: "Empty",
+        nameUni2: "Empty",
+        fromUni2: "Empty",
+        toUni2: "Empty",
+        nameUni3: "Empty",
+        fromUni3: "Empty",
+        toUni3: "Empty",
+        nameUni4: "Empty",
+        fromUni4: "Empty",
+        toUni4: "Empty",
+        nameUni5: "Empty",
+        fromUni5: "Empty",
+        toUni5: "Empty",
+        nameUni6: "Empty",
+        fromUni6: "Empty",
+        toUni6: "Empty",
+        nameUni7: "Empty",
+        fromUni7: "Empty",
+        toUni7: "Empty",
+        nameUni8: "Empty",
+        fromUni8: "Empty",
+        toUni8: "Empty",
+        nameUni9: "Empty",
+        fromUni9: "Empty",
+        toUni9: "Empty",
+        timestamp: firebase.firestore.Timestamp.now()
+        }).then(function(docRef) {
+        console.log("Document written with ID: ", docRef.id);
+    })
+    .catch(function(error) {
+        console.error("Error adding document: ", error);
+    });
+});
     </script>
-
-    <!-- ADD COLLEGES END -->
-
-    <script type="text/javascript" src="app8.js"></script>
-
 </body>
-
 </html>
