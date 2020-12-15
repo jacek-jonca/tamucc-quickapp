@@ -176,7 +176,7 @@ data.forEach(function(obj) {
         citizenship: "yes",
         birthPlace: "San Antonio, TX",
         major: "PSYC",
-        semester: "202102",
+        semester: "20212",
         nameUni10: "Empty",
         fromUni10: "Empty",
         toUni10: "Empty",
