@@ -228,85 +228,142 @@
                 <div class="container">
                     <form class="needs-validation" name="residencyForm" id="needs-validation" novalidate=""
                         autocomplete="on">
+
+                        <fieldset>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="content_box">
+                                        <legend class="title">CORE RESIDENCY QUESTIONS</legend>
+                                        <p>State law tells us how much to charge in tuition. With those questions on file, as a Texas resident, you can save up to half in your tuition expenses. Let's quickly walk through it.</p><br />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-12">During the 12 months prior to the term for which you are applying, did you attend a public college or university in Texas in a fall or spring term?</label> 
+                                <div class="col-12">
+                                  <div class="custom-control custom-radio custom-control-inline">
+                                    <input name="radio" id="radio_0" type="radio" class="custom-control-input" value="yes" required="required"> 
+                                    <label for="radio_0" class="custom-control-label">Yes</label>
+                                  </div>
+                                  <div class="custom-control custom-radio custom-control-inline">
+                                    <input name="radio" id="radio_1" type="radio" class="custom-control-input" value="no" required="required"> 
+                                    <label for="radio_1" class="custom-control-label">No</label>
+                                  </div>
+                                </div>
+                              </div> 
+                            <!-- Form SECTION  -->
+                                <div class="input-group">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                            <legend class="title">Previous Enrollment</legend>
+                                            <label class="form-control-label required" id="label_10" for="input_10"> 1.
+                                            During the 12 months prior to the term for which you are applying, did you attend a public
+                                            college or university in Texas in a fall or spring term? </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                            <div class="form-check form-check-inline">
+                                                <input type="radio" class="form-control input-lg" id="input_10_0" name="q10_1During" value="Yes">
+                                                <label class="form-control-label" id="label_input_10_0" for="input_10_0"> Yes</label>
+                                            <input type="radio" class="form-control input-lg" id="input_10_1" name="q10_1During" value="No">
+                                            <label class="form-control-label" id="label_input_10_1" for="input_10_1"> No</label>
+                                        </div>
+                                        <p>If you answered “no”, please continue to next part<br>If you answered “yes”, complete
+                                            the remaining questions in this section.</p>
+                                        </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                                        <label class="form-control-label" for="middle">Middle Name</label>
+                                        <input type="text" class="form-control input-lg" id="middle" name="middle"
+                                            placeholder="Middle name">
+                                    </div>
+                                    <div class="col-xs-9 col-sm-9 col-md-5 col-lg-5">
+                                        <label class="form-control-label required" for="last">Last Name</label>
+                                        <input type="text" class="form-control input-lg" id="last" name="last"
+                                            placeholder="Last name" required />
+                                    </div>
+                                    <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2">
+                                        <label class="form-control-label" for="suffix">Suffix</label>
+                                        <input type="text" class="form-control input-lg" id="suffix" name="suffix"
+                                            placeholder="Suffix">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <p>&nbsp;</p> -->
+                        </fieldset>
+
+
                         <h2>
-                            Part B. Previous Enrollment
+                            Previous Enrollment
                         </h2>
                         <label class="form-control-label required" id="label_10" for="input_10"> 1.
                             During the 12 months prior to the term for which you are applying, did you attend a public
                             college or university in Texas in a fall or spring term? </label>
                         <div class="form-check form-check-inline">
-                            <input type="radio" class="form-control" id="input_10_0" name="q10_1During" value="Yes">
-                            <label class="form-control-label required" id="label_input_10_0" for="input_10_0"> Yes
-                            </label>
-                            <input type="radio" class="form-control" id="input_10_1" name="q10_1During" value="No">
-                            <label class="form-control-label required" id="label_input_10_1" for="input_10_1"> No
-                            </label>
+                            <input type="radio" class="form-control input-lg" id="input_10_0" name="q10_1During" value="Yes">
+                            <label class="form-control-label" id="label_input_10_0" for="input_10_0"> Yes</label>
+                            <input type="radio" class="form-control input-lg" id="input_10_1" name="q10_1During" value="No">
+                            <label class="form-control-label" id="label_input_10_1" for="input_10_1"> No</label>
                         </div>
-                        <p>If you answered “no”, please continue to Part C.<br>If you answered “yes”, complete
-                            questions 2 - 5:</p>
-                        <label class="form-control-label required" id="label_11" for="input_11"> 2. What
-                            Texas public institution did you last attend? </label>
-                        <input type="text" id="input_11" name="q11_2What" data-type="input-textbox"
-                            class="form-control input-lg" size="20" value="">
-                        11 sublabel_input_ <label class="form-sub-label" for="input_11" id="sublabel_input_11"
-                            style="min-height:13px" aria-hidden="false"> Give full name, not just initials
-                        </label>
-                        <label class="form-control-label required" id="label_12" for="input_12"> 3. In
-                            which terms were you last enrolled? </label>
-                        <input type="text" id="input_12" name="q12_3In" data-type="input-textbox"
-                            class="form-control input-lg" size="20" value="">
-                        12 sublabel_input_ <label class="form-sub-label" for="input_12" id="sublabel_input_12"
-                            style="min-height:13px" aria-hidden="false"> Ex. Fall 2018, Spring 2019 </label>
-                        <label class="form-control-label required" id="label_13" for="input_13"> 4.
-                            During your last semester at a Texas public institution, did you pay resident (in-state) or
+                        <p>If you answered “no”, please continue to next part<br>If you answered “yes”, complete
+                            the remaining questions in this section.</p>
+                        <label class="form-control-label" id="label_11" for="input_11">
+                            2. What Texas public institution did you last attend? </label>
+                        <input type="text" id="input_11" name="q11_2What" class="form-control input-lg" size="20" value="">
+                        <label class="form-control-label" id="label_13" for="input_13">
+                            3. During your last semester at a Texas public institution, did you pay resident (in-state) or
                             nonresident (out-of-state) tuition? </label>
-                            <div class="form-check form-check-inline">
-                        <input type="radio" class="form-control" id="input_13_0" name="q13_4During"
-                            value="Resident (in-state)">
-                        <label class="form-control-label required" id="label_input_13_0" for="input_13_0"> Resident
-                            (in-state) </label>
-                        <input type="radio" class="form-control" id="input_13_1" name="q13_4During"
-                            value="Nonresident (out-of-state)">
-                        <label class="form-control-label required" id="label_input_13_1" for="input_13_1"> Nonresident
-                            (out-of-state) </label>
-                        <input type="radio" class="form-control" id="input_13_2" name="q13_4During" value="Unknown">
-                        <label class="form-control-label required" id="label_input_13_2" for="input_13_2"> Unknown
-                        </label>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" class="form-control" id="input_13_0" name="q13_4During"
+                                value="Resident (in-state)">
+                            <label class="form-control-label" id="label_input_13_0" for="input_13_0"> Resident
+                                (in-state) </label>
+                            <input type="radio" class="form-control" id="input_13_1" name="q13_4During"
+                                value="Nonresident (out-of-state)">
+                            <label class="form-control-label" id="label_input_13_1" for="input_13_1">
+                                Nonresident
+                                (out-of-state) </label>
+                            <input type="radio" class="form-control" id="input_13_2" name="q13_4During" value="Unknown">
+                            <label class="form-control-label" id="label_input_13_2" for="input_13_2"> Unknown
+                            </label>
                         </div>
-                        <label class="form-control-label required" id="label_14" for="input_14"> 5. If
+                        <label class="form-control-label" id="label_14" for="input_14"> 4. If
                             you paid in-state tuition at your last institution, was it because you were classified as a
                             resident or because you were a nonresident who received a waiver? </label>
-                            <div class="form-check form-check-inline">
-                        <input type="radio" class="form-control" id="input_14_0" name="q14_5If" value="Resident">
-                        <label class="form-control-label required" id="label_input_14_0" for="input_14_0"> Resident
-                        </label>
-                        <input type="radio" class="form-control" id="input_14_1" name="q14_5If"
-                            value="Nonresident with a waiver">
-                        <label class="form-control-label required" id="label_input_14_1" for="input_14_1"> Nonresident
-                            with a waiver </label>
-                        <input type="radio" class="form-control" id="input_14_2" name="q14_5If" value="Unknown">
-                        <label class="form-control-label required" id="label_input_14_2" for="input_14_2"> Unknown
-                        </label>
-                            </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" class="form-control" id="input_14_0" name="q14_5If" value="Resident">
+                            <label class="form-control-label" id="label_input_14_0" for="input_14_0"> Resident
+                            </label>
+                            <input type="radio" class="form-control" id="input_14_1" name="q14_5If"
+                                value="Nonresident with a waiver">
+                            <label class="form-control-label" id="label_input_14_1" for="input_14_1">
+                                Nonresident
+                                with a waiver </label>
+                            <input type="radio" class="form-control" id="input_14_2" name="q14_5If" value="Unknown">
+                            <label class="form-control-label" id="label_input_14_2" for="input_14_2"> Unknown
+                            </label>
+                        </div>
                         <p>IMPORTANT:</p>
-                        If you were enrolled at a Texas public institution during a Fall or Spring
-                        semester within the previous 12 months and were classified as a Texas resident,
-                        skip to Part I, sign and date this form and submit it to your institution.
-                        If you were not enrolled, or if you were enrolled but classified as a
-                        nonresident, proceed to Part C.
+                        <ul>
+                        <li>If you were enrolled at a Texas public institution during a Fall or Spring
+                        semester within the previous 12 months and were classified as a Texas resident that is the end of questions. Click here and click submit.</li>
+
+                        <li>If you were not enrolled, or if you were enrolled but classified as a nonresident, proceed to next part.</li>
                         </ul>
 
                         <h2 id="header_15" class="form-header" data-component="header">
-                            Part C. Residency Claim
+                        Residency Claim
                         </h2>
                         <label class="form-control-label required" id="label_16" for="input_16"> Are you
                             a resident of Texas? </label>
-                            <div class="form-check form-check-inline">
-                        <input type="radio" class="form-control" id="input_16_0" name="q16_areYou" value="Yes">
-                        <label class="form-control-label required" id="label_input_16_0" for="input_16_0"> Yes </label>
-                        <input type="radio" class="form-control" id="input_16_1" name="q16_areYou" value="No">
-                        <label class="form-control-label required" id="label_input_16_1" for="input_16_1"> No </label>
-                            </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" class="form-control" id="input_16_0" name="q16_areYou" value="Yes">
+                            <label class="form-control-label required" id="label_input_16_0" for="input_16_0"> Yes
+                            </label>
+                            <input type="radio" class="form-control" id="input_16_1" name="q16_areYou" value="No">
+                            <label class="form-control-label required" id="label_input_16_1" for="input_16_1"> No
+                            </label>
+                        </div>
                         <p>If you answered yes, continue to Part D.<br>If you answered no, complete the
                             following question and continue to Part&nbsp;</p>
                         <label class="form-control-label required" id="label_17" for="input_17"> Of what
@@ -320,12 +377,14 @@
                         <label class="form-control-label required" id="label_19" for="input_19"> 1a. Did
                             you graduate or will you graduate from high school or complete a GED in Texas prior to the
                             term for which you are applying? </label>
-                            <div class="form-check form-check-inline">
-                        <input type="radio" class="form-control" id="input_19_0" name="q19_1aDid" value="Yes">
-                        <label class="form-control-label required" id="label_input_19_0" for="input_19_0"> Yes </label>
-                        <input type="radio" class="form-control" id="input_19_1" name="q19_1aDid" value="No">
-                        <label class="form-control-label required" id="label_input_19_1" for="input_19_1"> No </label>
-                            </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" class="form-control" id="input_19_0" name="q19_1aDid" value="Yes">
+                            <label class="form-control-label required" id="label_input_19_0" for="input_19_0"> Yes
+                            </label>
+                            <input type="radio" class="form-control" id="input_19_1" name="q19_1aDid" value="No">
+                            <label class="form-control-label required" id="label_input_19_1" for="input_19_1"> No
+                            </label>
+                        </div>
                         <label class="form-control-label required" id="label_20" for="input_20"> 1b. If
                             you graduated or will graduate from high school, what was the name and city of the school?
                         </label> <input type="text" id="input_20" name="q20_1bIf" data-type="input-textbox"
@@ -333,29 +392,35 @@
                         <label class="form-control-label required" id="label_21" for="input_21"> 2. Did
                             you live or will you have lived in Texas the 36 months leading up to high school graduation
                             or completion of the GED? </label>
-                            <div class="form-check form-check-inline">
-                        <input type="radio" class="form-control" id="input_21_0" name="q21_2Did" value="Yes">
-                        <label class="form-control-label required" id="label_input_21_0" for="input_21_0"> Yes </label>
-                        <input type="radio" class="form-control" id="input_21_1" name="q21_2Did" value="No">
-                        <label class="form-control-label required" id="label_input_21_1" for="input_21_1"> No </label>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" class="form-control" id="input_21_0" name="q21_2Did" value="Yes">
+                            <label class="form-control-label required" id="label_input_21_0" for="input_21_0"> Yes
+                            </label>
+                            <input type="radio" class="form-control" id="input_21_1" name="q21_2Did" value="No">
+                            <label class="form-control-label required" id="label_input_21_1" for="input_21_1"> No
+                            </label>
                         </div>
                         <label class="form-control-label required" id="label_22" for="input_22"> 3. When
                             you begin the semester for which you area applying, will you have lived in Texas for the
                             previous 12 months? </label>
-                            <div class="form-check form-check-inline">
-                        <input type="radio" class="form-control" id="input_22_0" name="q22_3When" value="Yes">
-                        <label class="form-control-label required" id="label_input_22_0" for="input_22_0"> Yes </label>
-                        <input type="radio" class="form-control" id="input_22_1" name="q22_3When" value="No">
-                        <label class="form-control-label required" id="label_input_22_1" for="input_22_1"> No </label>
-                            </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" class="form-control" id="input_22_0" name="q22_3When" value="Yes">
+                            <label class="form-control-label required" id="label_input_22_0" for="input_22_0"> Yes
+                            </label>
+                            <input type="radio" class="form-control" id="input_22_1" name="q22_3When" value="No">
+                            <label class="form-control-label required" id="label_input_22_1" for="input_22_1"> No
+                            </label>
+                        </div>
                         <label class="form-control-label required" id="label_23" for="input_23"> 4. Are
                             you a U.S. Citizen or Permanent Resident? </label>
-                            <div class="form-check form-check-inline">
-                        <input type="radio" class="form-control" id="input_23_0" name="q23_4Are" value="Yes">
-                        <label class="form-control-label required" id="label_input_23_0" for="input_23_0"> Yes </label>
-                        <input type="radio" class="form-control" id="input_23_1" name="q23_4Are" value="No">
-                        <label class="form-control-label required" id="label_input_23_1" for="input_23_1"> No </label>
-                            </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" class="form-control" id="input_23_0" name="q23_4Are" value="Yes">
+                            <label class="form-control-label required" id="label_input_23_0" for="input_23_0"> Yes
+                            </label>
+                            <input type="radio" class="form-control" id="input_23_1" name="q23_4Are" value="No">
+                            <label class="form-control-label required" id="label_input_23_1" for="input_23_1"> No
+                            </label>
+                        </div>
                         <p>Instructions to Part D:</p>
                         If you answered “no” to question 1a or 2 or 3, continue to Part E.
                         If you answered “yes” to all four questions, skip to Part I.
