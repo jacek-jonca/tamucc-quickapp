@@ -17,7 +17,7 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 //var db = firebase.firestore();
-var userId = getUrlVars()["id"];
+var userId = getUrlVars()["EXT_TRANS_ID"];
 var userId = decodeURI(userId);
 
 //
