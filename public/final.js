@@ -18,7 +18,19 @@ firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 //var db = firebase.firestore();
 var userId = getUrlVars()["EXT_TRANS_ID"];
-var userId = decodeURI(userId);
+console.log("Orig ID is: ");
+console.log(userId);
+//var userId = decodeURI(userId);
+var userId = encodeURIComponent(userId);
+console.log("Encided ID is: ");
+//console.log(encodeURIComponent(userId));
+console.log(userId);
+
+function fixedEncodeURIComponent(str) {
+    return encodeURIComponent(str).replace(/[!*]/g, function(c) {
+      return '%' + c.charCodeAt(0).toString(16);
+    });
+  }
 
 //
 // PUSH TO FIREBASE
@@ -59,25 +71,25 @@ function check(e) {
     //Gets Value of form HTML elements
     //      var id = getUrlVars()["id"];
     //      var id = decodeURI(id);
-    var rightsNotification = document.getElementById('rightsNotification').value;
-    var termsNotification = document.getElementById('termsNotification').value;
-    var discriminationNotification = document.getElementById('discriminationNotification').value;
+    //var rightsNotification = document.getElementById('rightsNotification').value;
+    //var termsNotification = document.getElementById('termsNotification').value;
+    //var discriminationNotification = document.getElementById('discriminationNotification').value;
 
-// Biographical data make sure it is not empty
+// check if responses were provided
     if (!document.getElementById('rightsNotification')) {
-        var email = "Empty";
+        var rightsNotification = "Empty";
     } else {
-        var email = document.getElementById('rightsNotification').value;
+        var rightsNotification = document.getElementById('rightsNotification').value;
     }
     if (!document.getElementById('termsNotification')) {
-        var first = "Empty";
+        var termsNotification = "Empty";
     } else {
-        var first = document.getElementById('termsNotification').value;
+        var termsNotification = document.getElementById('termsNotification').value;
     }
     if (!document.getElementById('discriminationNotification')) {
-        var middle = "Empty";
+        var discriminationNotification = "Empty";
     } else {
-        var middle = document.getElementById('discriminationNotification').value;
+        var discriminationNotification = document.getElementById('discriminationNotification').value;
     }
 
     //Stores those values in a object
